@@ -1,5 +1,11 @@
 # zwds
 
+### web
+
+![](./docs/example.png)
+
+### cli
+
 ./zwds-cli -i 2021051811男
 ```text
 2021 5 18 11 男
