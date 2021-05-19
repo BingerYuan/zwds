@@ -2,6 +2,10 @@
 
 ### web
 
+- cd web && go run main
+
+- http://127.0.0.1:8111/zw
+
 ![](./docs/example.png)
 
 ### cli
