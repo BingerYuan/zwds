@@ -93,7 +93,7 @@ type ZwBody struct {
 	Solar string `json:"solar"` //阳历时间
 	GZ    string `json:"gz"`    //干支
 	Moon  string `json:"moon"`  //阴历
-	Info  string `json:"info"`  //命局
+	//Info  string `json:"info"`  //命局
 }
 
 func NewZwBody(t time.Time, sex string) *ZwBody {
@@ -109,14 +109,14 @@ func NewZwBody(t time.Time, sex string) *ZwBody {
 	moons := fmt.Sprintf("阴历 %d月 %d日", lm, lday)
 	//
 	zw := zwds.NewZW(y, m, d, h, sex)
-	info := fmt.Sprintf("性别:%s 命宫:%s 身宫:%s 五行:%s", sex, zw.MingGong, zw.ShenGong, zw.WuXingS)
+	//info := fmt.Sprintf("性别:%s 命宫:%s 身宫:%s 五行:%s", sex, zw.MingGong, zw.ShenGong, zw.WuXingS)
 
 	return &ZwBody{
 		zw,
 		ymdhs,
 		gzs,
 		moons,
-		info,
+		//	info,
 	}
 }
 func ResultZw(zwds *ZwBody) []byte {

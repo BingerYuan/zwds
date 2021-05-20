@@ -174,89 +174,108 @@
                 var px11 = document.getElementById("x11")
                 px11.innerHTML = js.solar + "<br>" + js.gz + "<br>" + js.moon;
                 var px12 = document.getElementById("x12")
-                px12.innerHTML = js.info;
-                var sihua=document.getElementById("x1")
-                sihua.innerHTML=js.si_hua;
+                px12.innerHTML = "性别:" + js.sex + "<br>" + "命主:" + js.ming_zhu + "<br>" + "身主:" + js.shen_zhu + "<br>" + "五行:" + js.wu_xing;
+                var sihua = document.getElementById("x1")
+                sihua.innerHTML = js.si_hua;
                 //
                 var haip = document.getElementById("hai")
-                haip.innerHTML=""
+                haip.innerHTML = ""
                 for (var i = 0; i < js.hai.length; i++) {
-                    haip.innerHTML += "<br>" + js.hai[i]
+                    if (js.hai[i] !== "") {
+                        haip.innerHTML += "<br>" + js.hai[i]
+                    }
                 }
                 //
                 var zip = document.getElementById("zi")
-                zip.innerHTML=""
+                zip.innerHTML = ""
                 for (i = 0; i < js.zi.length; i++) {
-                    zip.innerHTML += "<br>" + js.zi[i]
+                    if (js.zi[i] !== "") {
+                        zip.innerHTML += "<br>" + js.zi[i]
+                    }
                 }
                 //
                 var choup = document.getElementById("chou")
-                choup.innerHTML=""
+                choup.innerHTML = ""
                 for (i = 0; i < js.chou.length; i++) {
-                    choup.innerHTML += "<br>" + js.chou[i]
+                    if (js.chou[i] !== "") {
+                        choup.innerHTML += "<br>" + js.chou[i]
+                    }
                 }
                 //
                 var yinp = document.getElementById("yin")
-                yinp.innerHTML=""
+                yinp.innerHTML = ""
                 for (i = 0; i < js.yin.length; i++) {
-                    yinp.innerHTML += "<br>" + js.yin[i]
+                    if (js.yin[i] !== "") {
+                        yinp.innerHTML += "<br>" + js.yin[i]
+                    }
                 }
                 //
                 var maop = document.getElementById("mao")
-                maop.innerHTML=""
+                maop.innerHTML = ""
                 for (i = 0; i < js.mao.length; i++) {
-                    maop.innerHTML += "<br>" + js.mao[i]
+                    if (js.mao[i] !== "") {
+                        maop.innerHTML += "<br>" + js.mao[i]
+                    }
                 }
                 //
                 var chenp = document.getElementById("chen")
-                chenp.innerHTML=""
+                chenp.innerHTML = ""
                 for (i = 0; i < js.chen.length; i++) {
-                    chenp.innerHTML += "<br>" + js.chen[i]
+                    if (js.chen[i] !== "") {
+                        chenp.innerHTML += "<br>" + js.chen[i]
+                    }
                 }
                 //
                 var sip = document.getElementById("si")
-                sip.innerHTML=""
+                sip.innerHTML = ""
                 for (i = 0; i < js.si.length; i++) {
-                    sip.innerHTML += "<br>" + js.si[i]
+                    if (js.si[i] !== "") {
+                        sip.innerHTML += "<br>" + js.si[i]
+                    }
                 }
                 //
                 var wup = document.getElementById("wu")
-                wup.innerHTML=""
+                wup.innerHTML = ""
                 for (i = 0; i < js.wu.length; i++) {
-                    wup.innerHTML += "<br>" + js.wu[i]
+                    if (js.wu[i] !== "") {
+                        wup.innerHTML += "<br>" + js.wu[i]
+                    }
                 }
                 //
                 var weip = document.getElementById("wei")
-                weip.innerHTML=""
+                weip.innerHTML = ""
                 for (i = 0; i < js.wei.length; i++) {
-                    weip.innerHTML += "<br>" + js.wei[i]
+                    if (js.wei[i] !== "") {
+                        weip.innerHTML += "<br>" + js.wei[i]
+                    }
                 }
                 //
                 var shenp = document.getElementById("shen")
-                shenp.innerHTML=""
+                shenp.innerHTML = ""
                 for (i = 0; i < js.shen.length; i++) {
-                    shenp.innerHTML += "<br>" + js.shen[i]
+                    if (js.shen[i] !== "") {
+                        shenp.innerHTML += "<br>" + js.shen[i]
+                    }
                 }
                 //
                 var youp = document.getElementById("you")
-                youp.innerHTML=""
+                youp.innerHTML = ""
                 for (i = 0; i < js.you.length; i++) {
-                    youp.innerHTML += "<br>" + js.you[i]
+                    if (js.you[i] !== "") {
+                        youp.innerHTML += "<br>" + js.you[i]
+                    }
                 }
                 //
                 var xup = document.getElementById("xu")
-                xup.innerHTML=""
+                xup.innerHTML = ""
                 for (i = 0; i < js.xu.length; i++) {
-                    xup.innerHTML += "<br>" + js.xu[i]
+                    if (js.xu[i] !== "") {
+                        xup.innerHTML += "<br>" + js.xu[i]
+                    }
                 }
             }
         });
         return false;
-    }
-</script>
-<script>
-    function sub() {
-
     }
 </script>
 </body>
