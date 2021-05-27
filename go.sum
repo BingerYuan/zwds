@@ -1,12 +1,4 @@
-4d63.com/embedfiles v0.0.0-20190311033909-995e0740726f h1:oyYjGRBNq1TxAIG8aHqtxlvqUfzdZf+MbcRb/oweNfY=
-4d63.com/embedfiles v0.0.0-20190311033909-995e0740726f/go.mod h1:HxEsUxoVZyRxsZML/S6e2xAuieFMlGO0756ncWx1aXE=
-4d63.com/tz v1.2.0 h1:EpJt060xY+M+M0Wj8btz+THdOJbSxj4i8jhVQP3Wr0U=
-4d63.com/tz v1.2.0/go.mod h1:SHGqVdL7hd2ZaX2T9uEiOZ/OFAUfCCLURdLPJsd8ZNs=
-github.com/soniakeys/meeus/v3 v3.0.1 h1:inZIhWUeyumGoQ//CCZMI4qR2vPKCS6LbVPca2mDvqE=
-github.com/soniakeys/meeus/v3 v3.0.1/go.mod h1:G1tkqa+QcOyErSe7WqN0OnzVeLrvq9bQBoNb1IG+3n8=
-github.com/soniakeys/sexagesimal v1.0.0 h1:p4OW7ID1naq0+k0Sn/gvuS2hRgmEcuJrZeyyntOGLvU=
-github.com/soniakeys/sexagesimal v1.0.0/go.mod h1:/7psACvkUx/IZ1XX3HDdBci1Lz1ZObcjLX2MVVKI3rM=
-github.com/soniakeys/unit v1.0.0 h1:UMIgu6dxDQaK6tYaQV6dJn5oovB6035KRxCS0O7Jiec=
-github.com/soniakeys/unit v1.0.0/go.mod h1:z93o2tO/hJA2+Wr1Fozkt3jK4LyDwTfRCjyRFLAa4zk=
+github.com/Aquarian-Age/xa v0.0.0-20210519052648-c3558f5abe45 h1:fUbVL3CvCrawVTVhnP6AJ4aKIaVKZdlHLDvo6Y2hrc8=
+github.com/Aquarian-Age/xa v0.0.0-20210519052648-c3558f5abe45/go.mod h1:ES1Bhkk7UqtR4diwLMqHwg0o6ZGM6OQwuJ+KHHuYUJw=
 github.com/starainrt/astro v0.0.0-20210304105239-5bd51a8aad8f h1:5MsYLA0yDF/CeGszA3cIeA9isFrr68NeR/C3399bipI=
 github.com/starainrt/astro v0.0.0-20210304105239-5bd51a8aad8f/go.mod h1:aouKnxcSoddULB1nHg3afX18i7JAQs7HgwsIHpzNeis=
