@@ -142,7 +142,7 @@ func baZuo(ybs string, lday int) (string, string) {
 	rArr = append(rArr, rArr...)
 	var bzs string
 	for k := 0; k < len(rArr); k++ {
-		if k == lday {
+		if k == lday -1 {
 			bzs = rArr[k]
 			break
 		}
@@ -166,7 +166,7 @@ func sanTai(zfs string, lday int) (string, string) {
 	zhiArr = append(zhiArr, zhiArr...)
 	var sts string
 	for j := 0; j < len(zhiArr); j++ {
-		if j == lday {
+		if j == lday -1 {
 			sts = zhiArr[j]
 
 			break
