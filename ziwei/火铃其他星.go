@@ -80,7 +80,7 @@ func enGuan(wcs string, lday int) (string, string) {
 
 	var egs string
 	for j := 0; j < len(zhiArr); j++ {
-		if j == lday-1 {
+		if j == lday-2 {
 			egs = zhiArr[j]
 			break
 		}
@@ -105,7 +105,7 @@ func tianGui(wqs string, lday int) (string, string) {
 
 	var tgs string
 	for j := 0; j < len(zhiArr); j++ {
-		if j == lday-1 {
+		if j == lday-2 {
 			tgs = zhiArr[j]
 			break
 		}
