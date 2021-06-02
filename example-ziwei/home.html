@@ -283,9 +283,12 @@
 </table>
 
 <div>
-    <label id="infol" ></label> <label id="infol1" style="color: red"></label> <label id="infol2" style="color: green"></label>
-    <label id="infol3" style="color: DeepSkyBlue"></label> <label id="infol4" style="color: blue"></label> <label id="infol5" style="color: Orchid"></label>
-    <label id="infol6"></label> <label id="infol7" style="color: OrangeRed"></label><label id="infol8" style="color: red"></label>
+    <label id="infol"></label> <label id="infol1" style="color: red"></label> <label id="infol2"
+                                                                                     style="color: green"></label>
+    <label id="infol3" style="color: DeepSkyBlue"></label> <label id="infol4" style="color: blue"></label> <label
+        id="infol5" style="color: Orchid"></label>
+    <label id="infol6"></label> <label id="infol7" style="color: OrangeRed"></label><label id="infol8"
+                                                                                           style="color: red"></label>
     <script>
         let infop = document.getElementById("infol")
         let infop1 = document.getElementById("infol1")
@@ -296,22 +299,21 @@
         let infop6 = document.getElementById("infol6")
         let infop7 = document.getElementById("infol7")
         let infop8 = document.getElementById("infol8")
-        infop.innerText="l1: 寅首 十二长生 十二命宫"
-        infop1.innerText="l2: 十四主星"
-        infop2.innerText="l3: 月系诸星　左辅　右弼　阴煞　天刑　天姚　天月　天巫"
-        infop3.innerText="l4: 年支系诸星　天喜 天虚 天哭 天德 红鸾 龙池 凤阁 孤辰 寡宿 破碎 大耗 华盖 解神 咸池 劫杀 天马 蜚廉"
-        infop4.innerText="l5: 年干系诸星　擎羊星,陀罗星,天钺星,天魁星,禄存星,天福星,天官星,正空亡,副空亡"
-        infop5.innerText="l6: 时系诸星　文昌　文曲　天空　地劫　台辅　封诰"
-        infop6.innerText="l7: 大小限"
-        infop7.innerText="l8: 其他星　火星 铃星 三台星 八座星 天贵星 恩光星 天才星 天寿星"
-        infop8.innerText="                    l9: 庙　3　旺　2　地　1　利 0　平-1　不得地-2　陷-3(紫微星, 天机星, 太阳星, 武曲星, 天同星, 廉贞星,天府星, 太阴星, 贪狼星, 巨门星, 天相星, 天梁星, 七杀星, 破军星,火星, 铃星, 擎羊星, 陀罗星, 文昌, 文曲)`\n"
+        infop.innerText = "l1: 寅首 十二长生 十二命宫"
+        infop1.innerText = "l2: 十四主星"
+        infop2.innerText = "l3: 月系诸星　左辅　右弼　阴煞　天刑　天姚　天月　天巫"
+        infop3.innerText = "l4: 年支系诸星　天喜 天虚 天哭 天德 红鸾 龙池 凤阁 孤辰 寡宿 破碎 大耗 华盖 解神 咸池 劫杀 天马 蜚廉"
+        infop4.innerText = "l5: 年干系诸星　擎羊星,陀罗星,天钺星,天魁星,禄存星,天福星,天官星,正空亡,副空亡"
+        infop5.innerText = "l6: 时系诸星　文昌　文曲　天空　地劫　台辅　封诰"
+        infop6.innerText = "l7: 大小限"
+        infop7.innerText = "l8: 其他星　火星 铃星 三台星 八座星 天贵星 恩光星 天才星 天寿星"
+        infop8.innerText = "l9: 庙　3　旺　2　地　1　利 0　平-1　不得地-2　陷-3(紫微星, 天机星, 太阳星, 武曲星, 天同星, 廉贞星,天府星, 太阴星, 贪狼星, 巨门星, 天相星, 天梁星, 七杀星, 破军星,火星, 铃星, 擎羊星, 陀罗星, 文昌, 文曲)"
     </script>
     <label id="miao" class="right"></label>
 </div>
 
 <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    //const g12 = ["亥", "子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌"]
     function subziwei() {
         $.ajax({
             type: "POST",
@@ -382,53 +384,104 @@
                     js.wu_xing;
                 //#################################################
                 let haip = document.getElementById("hai")
-                let hail = document.getElementById("hail")
-                let hail2 = document.getElementById("hail2")
-                let hail3 = document.getElementById("hail3")
                 let zip = document.getElementById("zi")
-                let zil = document.getElementById("zil")
-                let zil2 = document.getElementById("zil2")
-                let zil3 = document.getElementById("zil3")
                 let choup = document.getElementById("chou")
-                let choul = document.getElementById("choul")
-                let choul2 = document.getElementById("choul2")
-                let choul3 = document.getElementById("choul3")
                 let yinp = document.getElementById("yin")
-                let yinl = document.getElementById("yinl")
-                let yinl2 = document.getElementById("yinl2")
-                let yinl3 = document.getElementById("yinl3")
                 let maop = document.getElementById("mao")
-                let maol = document.getElementById("maol")
-                let maol2 = document.getElementById("maol2")
-                let maol3 = document.getElementById("maol3")
                 let chenp = document.getElementById("chen")
-                let chenl = document.getElementById("chenl")
-                let chenl2 = document.getElementById("chenl2")
-                let chenl3 = document.getElementById("chenl3")
                 let sip = document.getElementById("si")
-                let sil = document.getElementById("sil")
-                let sil2 = document.getElementById("sil2")
-                let sil3 = document.getElementById("sil3")
                 let wup = document.getElementById("wu")
-                let wul = document.getElementById("wul")
-                let wul2 = document.getElementById("wul2")
-                let wul3 = document.getElementById("wul3")
                 let weip = document.getElementById("wei")
-                let weil = document.getElementById("weil")
-                let weil2 = document.getElementById("weil2")
-                let weil3 = document.getElementById("weil3")
                 let shenp = document.getElementById("shen")
-                let shenl = document.getElementById("shenl")
-                let shenl2 = document.getElementById("shenl2")
-                let shenl3 = document.getElementById("shenl3")
                 let youp = document.getElementById("you")
-                let youl = document.getElementById("youl")
-                let youl2 = document.getElementById("youl2")
-                let youl3 = document.getElementById("youl3")
                 let xup = document.getElementById("xu")
+                haip.innerHTML = ""
+                zip.innerHTML = ""
+                choup.innerHTML = ""
+                yinp.innerHTML = ""
+                maop.innerHTML = ""
+                chenp.innerHTML = ""
+                sip.innerHTML = ""
+                wup.innerHTML = ""
+                weip.innerHTML = ""
+                shenp.innerHTML = ""
+                youp.innerHTML = ""
+                xup.innerHTML = ""
+                ////
+                let hail = document.getElementById("hail")
+                let zil = document.getElementById("zil")
+                let choul = document.getElementById("choul")
+                let yinl = document.getElementById("yinl")
+                let maol = document.getElementById("maol")
+                let chenl = document.getElementById("chenl")
+                let sil = document.getElementById("sil")
+                let wul = document.getElementById("wul")
+                let weil = document.getElementById("weil")
+                let shenl = document.getElementById("shenl")
+                let youl = document.getElementById("youl")
                 let xul = document.getElementById("xul")
+                hail.innerHTML = ""
+                zil.innerHTML = ""
+                choul.innerHTML = ""
+                yinl.innerHTML = ""
+                maol.innerHTML = ""
+                chenl.innerHTML = ""
+                sil.innerHTML = ""
+                wul.innerHTML = ""
+                weil.innerHTML = ""
+                shenl.innerHTML = ""
+                youl.innerHTML = ""
+                xul.innerHTML = ""
+                //
+                let hail2 = document.getElementById("hail2")
+                let zil2 = document.getElementById("zil2")
+                let choul2 = document.getElementById("choul2")
+                let yinl2 = document.getElementById("yinl2")
+                let maol2 = document.getElementById("maol2")
+                let chenl2 = document.getElementById("chenl2")
+                let sil2 = document.getElementById("sil2")
+                let wul2 = document.getElementById("wul2")
+                let weil2 = document.getElementById("weil2")
+                let shenl2 = document.getElementById("shenl2")
+                let youl2 = document.getElementById("youl2")
                 let xul2 = document.getElementById("xul2")
+                hail2.innerHTML = ""
+                zil2.innerHTML = ""
+                choul2.innerHTML = ""
+                yinl2.innerHTML = ""
+                maol2.innerHTML = ""
+                chenl2.innerHTML = ""
+                sil2.innerHTML = ""
+                wul2.innerHTML = ""
+                weil2.innerHTML = ""
+                shenl2.innerHTML = ""
+                youl2.innerHTML = ""
+                xul2.innerHTML = ""
+                //
+                let hail3 = document.getElementById("hail3")
+                let zil3 = document.getElementById("zil3")
+                let choul3 = document.getElementById("choul3")
+                let yinl3 = document.getElementById("yinl3")
+                let maol3 = document.getElementById("maol3")
+                let chenl3 = document.getElementById("chenl3")
+                let sil3 = document.getElementById("sil3")
+                let wul3 = document.getElementById("wul3")
+                let weil3 = document.getElementById("weil3")
+                let shenl3 = document.getElementById("shenl3")
+                let youl3 = document.getElementById("youl3")
                 let xul3 = document.getElementById("xul3")
+                hail3.innerHTML = ""
+                zil3.innerHTML = ""
+                choul3.innerHTML = ""
+                yinl3.innerHTML = ""
+                maol3.innerHTML = ""
+                chenl3.innerHTML = ""
+                sil3.innerHTML = ""
+                wul3.innerHTML = ""
+                weil3.innerHTML = ""
+                shenl3.innerHTML = ""
+                youl3.innerHTML = ""
+                xul3.innerHTML = ""
                 //
                 let hail4 = document.getElementById("hail4")
                 let zil4 = document.getElementById("zil4")
@@ -554,55 +607,6 @@
                 shenl8.innerHTML = ""
                 youl8.innerHTML = ""
                 xul8.innerHTML = ""
-                //
-                haip.innerHTML = ""
-                hail.innerHTML = ""
-                hail2.innerHTML = ""
-                hail3.innerHTML = ""
-                zip.innerHTML = ""
-                zil.innerHTML = ""
-                zil2.innerHTML = ""
-                zil3.innerHTML = ""
-                choup.innerHTML = ""
-                choul.innerHTML = ""
-                choul2.innerHTML = ""
-                choul3.innerHTML = ""
-                yinp.innerHTML = ""
-                yinl.innerHTML = ""
-                yinl2.innerHTML = ""
-                yinl3.innerHTML = ""
-                maop.innerHTML = ""
-                maol.innerHTML = ""
-                maol2.innerHTML = ""
-                maol3.innerHTML = ""
-                chenp.innerHTML = ""
-                chenl.innerHTML = ""
-                chenl2.innerHTML = ""
-                chenl3.innerHTML = ""
-                sip.innerHTML = ""
-                sil.innerHTML = ""
-                sil2.innerHTML = ""
-                sil3.innerHTML = ""
-                wup.innerHTML = ""
-                wul.innerHTML = ""
-                wul2.innerHTML = ""
-                wul3.innerHTML = ""
-                weip.innerHTML = ""
-                weil.innerHTML = ""
-                weil2.innerHTML = ""
-                weil3.innerHTML = ""
-                shenp.innerHTML = ""
-                shenl.innerHTML = ""
-                shenl2.innerHTML = ""
-                shenl3.innerHTML = ""
-                youp.innerHTML = ""
-                youl.innerHTML = ""
-                youl2.innerHTML = ""
-                youl3.innerHTML = ""
-                xup.innerHTML = ""
-                xul.innerHTML = ""
-                xul2.innerHTML = ""
-                xul3.innerHTML = ""
                 //###########################################
                 let mgzArr = [haip, zip, choup, yinp, maop, chenp, sip, wup, weip, shenp, youp, xup]//月干支数组
                 let mparr = [hail, zil, choul, yinl, maol, chenl, sil, wul, weil, shenl, youl, xul]//命盘十二宫
@@ -625,7 +629,7 @@
                 addSiHua(siHuamap, stararr)//四化
                 addDaXian(daXianmap, daXiaoXianArr)//大限
                 addXiaoXian(xiaoXianmap, daXiaoXianArr)//小限
-                addOtherStar(otherStarmap, otherArr,miaomap)//其他星系
+                addOtherStar(otherStarmap, otherArr, miaomap)//其他星系
                 //miaox(miaomap, miaop)//庙显示到指定位置
                 //==========================================
                 shcolor(stararr)//14主星 红色
@@ -741,7 +745,7 @@
         for (let [sn, sz] of starmap.entries()) {
             if (sz === "亥") {
                 stararr[0].innerHTML += " " + sn
-                addMiao(sz, sn, 1, miaomap, stararr)
+                addMiao(sz, sn, 0, miaomap, stararr)
             }
             if (sz === "子") {
                 stararr[1].innerHTML += " " + sn
@@ -1110,16 +1114,16 @@
     }
 
     //其他星系
-    function addOtherStar(otherStarmap, otherArr,miaomap) {
+    function addOtherStar(otherStarmap, otherArr, miaomap) {
         //console.log("other===>", otherStarmap, otherArr)
         for (let [ostar, ozhi] of otherStarmap.entries()) {
             if (ozhi === "亥") {
                 otherArr[0].innerHTML += " " + ostar
-               addMiao(ozhi, ostar, 0, miaomap, otherArr)
+                addMiao(ozhi, ostar, 0, miaomap, otherArr)
             }
             if (ozhi === "子") {
                 otherArr[1].innerHTML += " " + ostar
-                 addMiao(ozhi, ostar, 1, miaomap, otherArr)
+                addMiao(ozhi, ostar, 1, miaomap, otherArr)
             }
             if (ozhi === "丑") {
                 otherArr[2].innerHTML += " " + ostar
@@ -1127,39 +1131,39 @@
             }
             if (ozhi === "寅") {
                 otherArr[3].innerHTML += " " + ostar
-                 addMiao(ozhi, ostar, 3, miaomap, otherArr)
+                addMiao(ozhi, ostar, 3, miaomap, otherArr)
             }
             if (ozhi === "卯") {
                 otherArr[4].innerHTML += " " + ostar
-                  addMiao(ozhi, ostar, 4,miaomap, otherArr)
+                addMiao(ozhi, ostar, 4, miaomap, otherArr)
             }
             if (ozhi === "辰") {
                 otherArr[5].innerHTML += " " + ostar
-                  addMiao(ozhi, ostar, 5, miaomap, otherArr)
+                addMiao(ozhi, ostar, 5, miaomap, otherArr)
             }
             if (ozhi === "巳") {
                 otherArr[6].innerHTML += " " + ostar
-                 addMiao(ozhi, ostar, 6, miaomap, otherArr)
+                addMiao(ozhi, ostar, 6, miaomap, otherArr)
             }
             if (ozhi === "午") {
                 otherArr[7].innerHTML += " " + ostar
-                 addMiao(ozhi, ostar, 7, miaomap, otherArr)
+                addMiao(ozhi, ostar, 7, miaomap, otherArr)
             }
             if (ozhi === "未") {
                 otherArr[8].innerHTML += " " + ostar
-                  addMiao(ozhi, ostar, 8, miaomap, otherArr)
+                addMiao(ozhi, ostar, 8, miaomap, otherArr)
             }
             if (ozhi === "申") {
                 otherArr[9].innerHTML += " " + ostar
-                 addMiao(ozhi, ostar, 9, miaomap, otherArr)
+                addMiao(ozhi, ostar, 9, miaomap, otherArr)
             }
             if (ozhi === "酉") {
                 otherArr[10].innerHTML += " " + ostar
-                  addMiao(ozhi, ostar, 10, miaomap, otherArr)
+                addMiao(ozhi, ostar, 10, miaomap, otherArr)
             }
             if (ozhi === "戌") {
                 otherArr[11].innerHTML += " " + ostar
-                 addMiao(ozhi, ostar, 11, miaomap, otherArr)
+                addMiao(ozhi, ostar, 11, miaomap, otherArr)
             }
         }
     }
@@ -1988,6 +1992,7 @@
         }
 
     }
+
     //=======================================================
     //14主星颜色
     function shcolor(stararr) {
