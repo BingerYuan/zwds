@@ -3,12 +3,13 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/Aquarian-Age/zwds/ziwei"
 	"log"
 	"net/http"
 	"strconv"
 	"text/template"
 	"time"
+
+	"github.com/Aquarian-Age/zwds/ziwei"
 )
 
 func main() {
@@ -70,7 +71,22 @@ func getymdSex(r *http.Request) (time.Time, string) {
 	return t, sex
 }
 
-func newBody(t time.Time, sex string) *ziwei.ZiWei {
-	y, m, d, h := t.Year(), int(t.Month()), t.Day(), t.Hour()
-	return ziwei.NewZiWei(y, m, d, h, sex)
+type ZwBody struct {
+	*ziwei.ZiWei
+	//*ziwei.InfoZw
 }
+
+func newBody(t time.Time, sex string) *ZwBody {
+	y, m, d, h := t.Year(), int(t.Month()), t.Day(), t.Hour()
+	zw := ziwei.NewZiWei(y, m, d, h, sex)
+	//zwinfo := zw.NewInfoZw()
+	return &ZwBody{
+		zw,
+		//zwinfo,
+	}
+}
+
+// func newBody(t time.Time, sex string) *ziwei.ZiWei {
+// 	y, m, d, h := t.Year(), int(t.Month()), t.Day(), t.Hour()
+// 	return ziwei.NewZiWei(y, m, d, h, sex)
+// }

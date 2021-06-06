@@ -333,6 +333,11 @@
                 let guiRenYang = js.gui_ren_yang
                 let guiRenYin = js.gui_ren_yin
                 //
+                let huaLu = js.hua_lu
+                let huaQuan = js.hua_quan
+                let huaKe = js.hua_ke
+                let huaJi = js.hua_ji
+                //
                 let riQin = js.ri_qin
                 let shiQin = js.shi_qin
                 let riJianChu = js.jian_chu
@@ -393,16 +398,16 @@
                 msgp.innerHTML = ""
                 msgp.innerHTML = "命宫:" + minggong + " " + "命主:" + mingzhu + "<br>" +
                     "身宫:" + shengong + " " + "身主:" + shenzhu + "<br>" +
-                    js.wu_xing //+ "<br>" + guiRenYang + "<br>" + guiRenYin;
+                    js.wu_xing + "<br>" + guiRenYang + "<br>" + guiRenYin;
                 //#################################################
-                // let xinfop = document.getElementById("xinfo")
-                // xinfop.innerHTML = ""
-                // xinfop.innerHTML = "日禽: " + riQin + "<br>" + "時禽: " + shiQin + "<br>" + riJianChu +
-                //     "<br>" + yueXiang + "<br>" + jieQi + "<br>" + yueJiang + "<br>"
+                let xinfop = document.getElementById("xinfo")
+                xinfop.innerHTML = ""
+                xinfop.innerHTML = "日禽: " + riQin + "<br>" + "時禽: " + shiQin + "<br>" + riJianChu +
+                    "<br>" + yueXiang + "<br>" + jieQi + "<br>" + yueJiang + "<br>"
                 //################################################
                 let x2p =document.getElementById("x2")
                 x2p.innerHTML=""
-               // x2p.innerHTML=js.si_hua_y+"<br>"+"<br>"+js.si_hua_m+"<br>"+"<br>"+js.si_hua_d
+                x2p.innerHTML=js.si_hua_y+"<br>"+"<br>"+js.si_hua_m+"<br>"+"<br>"+js.si_hua_d
                 //################################################
                 let haip = document.getElementById("hai")
                 let hail = document.getElementById("hail")

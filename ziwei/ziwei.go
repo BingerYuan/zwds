@@ -7,6 +7,8 @@ import (
 )
 
 type ZiWei struct {
+	Ygz, Mgz, Dgz, Hgz string //年月日时干支
+
 	Solar string `json:"solar"` //阳历信息
 	Gzs   string `json:"gzs"`   //干支信息
 	Moon  string `json:"moon"`  //阴历信息
@@ -36,11 +38,11 @@ type ZiWei struct {
 }
 
 func NewZiWei(y, m, d, h int, sex string) *ZiWei {
-	obj := gz.NewGanZhi(y,m,d,h)
-	ygz:=obj.YGZ
-	mgz:=obj.MGZ
-	dgz:=obj.DGZ
-	hgz:=obj.HGZ
+	obj := gz.NewGanZhi(y, m, d, h)
+	ygz := obj.YGZ
+	mgz := obj.MGZ
+	dgz := obj.DGZ
+	hgz := obj.HGZ
 	//
 	lm, lday, _, _ := basic.GetLunar(y, m, d) //阴历日数字
 	solar := fmt.Sprintf("%d年-%d月-%d日-%d时", y, m, d, h)
@@ -76,9 +78,15 @@ func NewZiWei(y, m, d, h int, sex string) *ZiWei {
 	miaoMap := GetMiaoMap(ygz, hgz, star14map)
 
 	zw := &ZiWei{
-		Solar:    solar,
-		Gzs:      gzs,
-		Moon:     moon,
+		Ygz: ygz,
+		Mgz: mgz,
+		Dgz: dgz,
+		Hgz: hgz,
+
+		Solar: solar,
+		Gzs:   gzs,
+		Moon:  moon,
+
 		YinShou:  yinShouArr,
 		MingGong: mg,
 		ShenGong: sg,
