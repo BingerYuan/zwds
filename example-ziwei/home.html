@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>紫微斗数</title>
@@ -56,2028 +57,2002 @@
 </head>
 
 <body>
-<form action="" class="formclass" id="zwfid" method="POST" name="form" style="text-align: center;"
-      onsubmit="return subziwei()">
-    <select id="ysid" name="ly" class="classy">
-        <script>
-            let d = new Date();
-            let year = d.getFullYear();
-            let yearSelect = document.getElementById("ysid");
-            for (let i = 1601; i <= 3498; i++) {
-                let opt = document.createElement("option");
-                opt.value = i;
-                opt.text = i + "年";
-                yearSelect.appendChild(opt);
-            }
-            //添加select到表单
-            document.body.appendChild(document.getElementById("zwfid"));
+    <form action="" class="formclass" id="zwfid" method="POST" name="form" style="text-align: center;"
+        onsubmit="return subziwei()">
+        <select id="ysid" name="ly" class="classy">
+            <script>
+                let d = new Date();
+                let year = d.getFullYear();
+                let yearSelect = document.getElementById("ysid");
+                for (let i = 1601; i <= 3498; i++) {
+                    let opt = document.createElement("option");
+                    opt.value = i;
+                    opt.text = i + "年";
+                    yearSelect.appendChild(opt);
+                }
+                //添加select到表单
+                document.body.appendChild(document.getElementById("zwfid"));
 
-            //默认显示本年数字
-            document.getElementsByName("ly")[0].value = year;
-        </script>
-    </select>
-    <select id="msid" name="lm" class="classm">
-        <script>
-            let monthSelect = document.getElementById("msid");
-            for (let i = 1; i <= 12; i++) {
-                let opt = document.createElement("option");
-                opt.value = i;
-                opt.text = i + "月";
-                monthSelect.appendChild(opt);
-            }
-            document.body.appendChild(document.getElementById("zwfid"));
-            document.getElementsByName("lm")[0].value = d.getMonth() + 1;
-        </script>
-    </select>
-    <select id="dsid" name="ld" class="classd">
-        <script>
-            let dSelect = document.getElementById("dsid");
-            for (let i = 1; i <= 31; i++) {
-                let opt = document.createElement("option"); //生成option
-                opt.value = i;
-                opt.text = i + "日";
-                dSelect.appendChild(opt);
-            }
-            document.body.appendChild(document.getElementById("zwfid"));
-            document.getElementsByName("ld")[0].value = d.getDate();
-        </script>
-    </select>
-    <select id="hsid" name="lh" class="classh">
-        <script>
-            let hSelect = document.getElementById("hsid");
-            for (let i = 0; i <= 23; i++) {
-                let opt = document.createElement("option");
-                opt.value = i;
-                opt.text = i + "点";
-                hSelect.appendChild(opt);
-            }
-            document.body.appendChild(document.getElementById("zwfid"));
-            document.getElementsByName("lh")[0].value = d.getHours();
-        </script>
-    </select>
-    <select id="sex" name="sex" class="classsex">
-        <option id="nan" value="男">男</option>
-        <option id="nv" value="女">女</option>
-    </select>
-    <button class="btnsub" id="sub" onclick=sub()>查看</button>
-</form>
+                //默认显示本年数字
+                document.getElementsByName("ly")[0].value = year;
+            </script>
+        </select>
+        <select id="msid" name="lm" class="classm">
+            <script>
+                let monthSelect = document.getElementById("msid");
+                for (let i = 1; i <= 12; i++) {
+                    let opt = document.createElement("option");
+                    opt.value = i;
+                    opt.text = i + "月";
+                    monthSelect.appendChild(opt);
+                }
+                document.body.appendChild(document.getElementById("zwfid"));
+                document.getElementsByName("lm")[0].value = d.getMonth() + 1;
+            </script>
+        </select>
+        <select id="dsid" name="ld" class="classd">
+            <script>
+                let dSelect = document.getElementById("dsid");
+                for (let i = 1; i <= 31; i++) {
+                    let opt = document.createElement("option"); //生成option
+                    opt.value = i;
+                    opt.text = i + "日";
+                    dSelect.appendChild(opt);
+                }
+                document.body.appendChild(document.getElementById("zwfid"));
+                document.getElementsByName("ld")[0].value = d.getDate();
+            </script>
+        </select>
+        <select id="hsid" name="lh" class="classh">
+            <script>
+                let hSelect = document.getElementById("hsid");
+                for (let i = 0; i <= 23; i++) {
+                    let opt = document.createElement("option");
+                    opt.value = i;
+                    opt.text = i + "点";
+                    hSelect.appendChild(opt);
+                }
+                document.body.appendChild(document.getElementById("zwfid"));
+                document.getElementsByName("lh")[0].value = d.getHours();
+            </script>
+        </select>
+        <select id="sex" name="sex" class="classsex">
+            <option id="nan" value="男">男</option>
+            <option id="nv" value="女">女</option>
+        </select>
+        <button class="btnsub" id="sub" onclick=sub()>查看</button>
+    </form>
 
-<table class="table">
+    <table class="table">
 
-    <tr>
-        <td id="sitd">
-            <!--巳-->
-            <button id="si" style="text-align: left" onclick=btnSi()></button>
-            <label id="sil" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="sil8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="wutd">
-            <!--午-->
-            <button id="wu" onclick=btnWu()></button>
-            <label id="wul" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="wul8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="weitd">
-            <!--未-->
-            <button id="wei" onclick=btnWei()></button>
-            <label id="weil" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="weil8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="shentd">
-            <!--申-->
-            <button id="shen" onclick=btnShen()></button>
-            <label id="shenl" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="shenl8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-    </tr>
-    <tr>
-        <td id="chentd">
-            <!--辰-->
-            <button id="chen" onclick=btnChen()></button>
-            <label id="chenl" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="chenl8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="solar" style="border: 3px outset white;font-size: 14px">solar</td>
-        <td id="msg" style="border: 3px outset white;">msg</td>
-        <td id="youtd">
-            <!--酉-->
-            <button id="you" onclick=btnYou()></button>
-            <label id="youl" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="youl8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-    </tr>
-    <tr>
-        <td id="maotd">
-            <!--卯-->
-            <button id="mao" onclick=btnMao()></button>
-            <label id="maol" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="maol8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="xinfo" style="border: 3px outset white;">info</td>
-        <td id="x2" style="border: 3px outset white; font-size: 14px;">x2</td>
-        <td id="xutd">
-            <!--戌-->
-            <button id="xu" onclick=btnXu()></button>
-            <label id="xul" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="xul8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-    </tr>
-    <tr>
-        <td id="yintd">
-            <!--寅-->
-            <button id="yin" onclick=btnYin()></button>
-            <label id="yinl" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="yinl8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="choutd">
-            <!--丑-->
-            <button id="chou" onclick=btnChou()></button>
-            <label id="choul" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="choul8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="zitd">
-            <!--子-->
-            <button id="zi" onclick=btnZi()></button>
-            <label id="zil" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="zil8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-        <td id="haitd">
-            <!--亥-->
-            <button id="hai" onclick=btnHai()></button>
-            <label id="hail" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail2" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail3" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail4" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail5" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail6" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail7" style="text-align: left;font-size: 14px"></label><br>
-            <label id="hail8" style="text-align: left;font-size: 14px"></label><br>
-        </td>
-    </tr>
-</table>
+        <tr>
+            <td id="sitd">
+                <!--巳-->
+                <button id="si" style="text-align: left" onclick=btnSi()></button>
+                <label id="sil" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="sil8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="wutd">
+                <!--午-->
+                <button id="wu" onclick=btnWu()></button>
+                <label id="wul" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="wul8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="weitd">
+                <!--未-->
+                <button id="wei" onclick=btnWei()></button>
+                <label id="weil" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="weil8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="shentd">
+                <!--申-->
+                <button id="shen" onclick=btnShen()></button>
+                <label id="shenl" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="shenl8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="chentd">
+                <!--辰-->
+                <button id="chen" onclick=btnChen()></button>
+                <label id="chenl" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="chenl8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="solar" style="border: 3px outset white;font-size: 14px">solar</td>
+            <td id="msg" style="border: 3px outset white;">msg</td>
+            <td id="youtd">
+                <!--酉-->
+                <button id="you" onclick=btnYou()></button>
+                <label id="youl" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="youl8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="maotd">
+                <!--卯-->
+                <button id="mao" onclick=btnMao()></button>
+                <label id="maol" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="maol8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="xinfo" style="border: 3px outset white;">info</td>
+            <td id="x2" style="border: 3px outset white; font-size: 14px;">x2</td>
+            <td id="xutd">
+                <!--戌-->
+                <button id="xu" onclick=btnXu()></button>
+                <label id="xul" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="xul8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="yintd">
+                <!--寅-->
+                <button id="yin" onclick=btnYin()></button>
+                <label id="yinl" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="yinl8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="choutd">
+                <!--丑-->
+                <button id="chou" onclick=btnChou()></button>
+                <label id="choul" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="choul8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="zitd">
+                <!--子-->
+                <button id="zi" onclick=btnZi()></button>
+                <label id="zil" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="zil8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+            <td id="haitd">
+                <!--亥-->
+                <button id="hai" onclick=btnHai()></button>
+                <label id="hail" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail2" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail3" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail4" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail5" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail6" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail7" style="text-align: left;font-size: 14px"></label><br>
+                <label id="hail8" style="text-align: left;font-size: 14px"></label><br>
+            </td>
+        </tr>
+    </table>
 
-<div>
-    <label id="infol"></label> <label id="infol1" style="color: red"></label> <label id="infol2"
-                                                                                     style="color: green"></label>
-    <label id="infol3" style="color: DeepSkyBlue"></label> <label id="infol4" style="color: blue"></label> <label
-        id="infol5" style="color: Orchid"></label>
-    <label id="infol6"></label> <label id="infol7" style="color: OrangeRed"></label><label id="infol8"
-                                                                                           style="color: red"></label>
+    <div>
+        <label id="infol"></label> <label id="infol1" style="color: red"></label> <label id="infol2"
+            style="color: green"></label>
+        <label id="infol3" style="color: DeepSkyBlue"></label> <label id="infol4" style="color: blue"></label> <label
+            id="infol5" style="color: Orchid"></label>
+        <label id="infol6"></label> <label id="infol7" style="color: OrangeRed"></label><label id="infol8"
+            style="color: red"></label>
+        <script>
+            let infop = document.getElementById("infol")
+            let infop1 = document.getElementById("infol1")
+            let infop2 = document.getElementById("infol2")
+            let infop3 = document.getElementById("infol3")
+            let infop4 = document.getElementById("infol4")
+            let infop5 = document.getElementById("infol5")
+            let infop6 = document.getElementById("infol6")
+            let infop7 = document.getElementById("infol7")
+            let infop8 = document.getElementById("infol8")
+            infop.innerText = "l1: 寅首 十二长生 十二命宫"
+            infop1.innerText = "l2: 十四主星"
+            infop2.innerText = "l3: 月系诸星　左辅　右弼　阴煞　天刑　天姚　天月　天巫"
+            infop3.innerText = "l4: 年支系诸星　天喜 天虚 天哭 天德 红鸾 龙池 凤阁 孤辰 寡宿 破碎 大耗 华盖 解神 咸池 劫杀 天马 蜚廉"
+            infop4.innerText = "l5: 年干系诸星　擎羊星,陀罗星,天钺星,天魁星,禄存星,天福星,天官星,正空亡,副空亡"
+            infop5.innerText = "l6: 时系诸星　文昌　文曲　天空　地劫　台辅　封诰"
+            infop6.innerText = "l7: 大小限"
+            infop7.innerText = "l8: 其他星　火星 铃星 三台星 八座星 天贵 恩光星 天才星 天寿星"
+            infop8.innerText = "                    l9: 庙　3　旺　2　地　1　利 0　平-1　不得地-2　陷-3(紫微星, 天机星, 太阳星, 武曲星, 天同星, 廉贞星,天府星, 太阴星, 贪狼星, 巨门星, 天相星, 天梁星, 七杀星, 破军星,火星, 铃星, 擎羊星, 陀罗星, 文昌, 文曲)`\n"
+        </script>
+        <label id="rightp" class="right"></label>
+    </div>
+
+    <script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        let infop = document.getElementById("infol")
-        let infop1 = document.getElementById("infol1")
-        let infop2 = document.getElementById("infol2")
-        let infop3 = document.getElementById("infol3")
-        let infop4 = document.getElementById("infol4")
-        let infop5 = document.getElementById("infol5")
-        let infop6 = document.getElementById("infol6")
-        let infop7 = document.getElementById("infol7")
-        let infop8 = document.getElementById("infol8")
-        infop.innerText = "l1: 寅首 十二长生 十二命宫"
-        infop1.innerText = "l2: 十四主星"
-        infop2.innerText = "l3: 月系诸星　左辅　右弼　阴煞　天刑　天姚　天月　天巫"
-        infop3.innerText = "l4: 年支系诸星　天喜 天虚 天哭 天德 红鸾 龙池 凤阁 孤辰 寡宿 破碎 大耗 华盖 解神 咸池 劫杀 天马 蜚廉"
-        infop4.innerText = "l5: 年干系诸星　擎羊星,陀罗星,天钺星,天魁星,禄存星,天福星,天官星,正空亡,副空亡"
-        infop5.innerText = "l6: 时系诸星　文昌　文曲　天空　地劫　台辅　封诰"
-        infop6.innerText = "l7: 大小限"
-        infop7.innerText = "l8: 其他星　火星 铃星 三台星 八座星 天贵 恩光星 天才星 天寿星"
-        infop8.innerText = "                    l9: 庙　3　旺　2　地　1　利 0　平-1　不得地-2　陷-3(紫微星, 天机星, 太阳星, 武曲星, 天同星, 廉贞星,天府星, 太阴星, 贪狼星, 巨门星, 天相星, 天梁星, 七杀星, 破军星,火星, 铃星, 擎羊星, 陀罗星, 文昌, 文曲)`\n"
-    </script>
-    <label id="rightp" class="right"></label>
-</div>
+        function subziwei() {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/",
+                data: $('#zwfid').serialize(),
+                success: function (data) {
+                    let js = JSON.parse(data);
+                    let solar = js.solar
+                    let gzs = js.gzs
+                    let moon = js.moon
+                    let minggong = js.ming_gong
+                    let shengong = js.shen_gong
+                    let mingzhu = js.ming_zhu
+                    let shenzhu = js.shen_zhu
+                    //
+                    let guiRenYang = js.gui_ren_yang
+                    let guiRenYin = js.gui_ren_yin
+                    //
+                    let riQin = js.ri_qin
+                    let shiQin = js.shi_qin
+                    let riJianChu = js.jian_chu
+                    let yueXiang = js.yue_xiang
+                    let jieQi = js.jie_qi
+                    let yueJiang = js.yue_jiang
+                    //命盘map
+                    let mpobj = js.ming_pan;
+                    let mingpan = new Map(Object.entries(mpobj))
+                    //月干支
+                    let mgz = js.yin_shou
+                    //十四主星
+                    let starobj = js.star14
+                    let starmap = new Map(Object.entries(starobj))
+                    //十二长生
+                    let changShengobj = js.chang_sheng
+                    let changShengmap = new Map(Object.entries(changShengobj))
+                    //月系诸星
+                    let mstarobj = js.month_star
+                    let monthStarmap = new Map(Object.entries(mstarobj))
+                    //年支系诸星
+                    let yearZhiStarobj = js.year_zhi_star
+                    let yearZhiStarmap = new Map(Object.entries(yearZhiStarobj))
+                    //年干系诸星
+                    let yearGanStarobj = js.year_gan_star
+                    let yearGanStarmap = new Map(Object.entries(yearGanStarobj))
+                    //时系诸星
+                    let hourStarobj = js.hour_star
+                    let hourStarmap = new Map(Object.entries(hourStarobj))
+                    //四化
+                    let shobj = js.si_hua
+                    let siHuamap = new Map(Object.entries(shobj))
+                    //大限
+                    let daXianobj = js.da_xian
+                    let daXianmap = new Map(Object.entries(daXianobj))
+                    //小限
+                    let xiaoXianobj = js.xiao_xian
+                    let xiaoXianmap = new Map(Object.entries(xiaoXianobj))
+                    //其他星
+                    let otherStarobj = js.other_star
+                    let otherStarmap = new Map(Object.entries(otherStarobj))
+                    //庙
+                    let miaoobj = js.miao
+                    let miaomap = new Map(Object.entries(miaoobj))
 
-<script src="https://s3.pstatp.com/cdn/expire-1-M/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    function subziwei() {
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: "/",
-            data: $('#zwfid').serialize(),
-            success: function (data) {
-                let js = JSON.parse(data);
-                let solar = js.solar
-                let gzs = js.gzs
-                let moon = js.moon
-                let minggong = js.ming_gong
-                let shengong = js.shen_gong
-                let mingzhu = js.ming_zhu
-                let shenzhu = js.shen_zhu
-                //
-                let guiRenYang = js.gui_ren_yang
-                let guiRenYin = js.gui_ren_yin
-                //
-                let riQin = js.ri_qin
-                let shiQin = js.shi_qin
-                let riJianChu = js.jian_chu
-                let yueXiang = js.yue_xiang
-                let jieQi = js.jie_qi
-                let yueJiang = js.yue_jiang
-                //命盘map
-                let mpobj = js.ming_pan;
-                let mingpan = new Map(Object.entries(mpobj))
-                //console.log("命盘map: ", mingpan)
-                //月干支
-                let mgz = js.yin_shou
-                //console.log(mgz)
-                //十四主星
-                let starobj = js.star14
-                //console.log("star14", starobj)
-                let starmap = new Map(Object.entries(starobj))
-                //十二长生
-                let changShengobj = js.chang_sheng
-                //console.log("十二长生",changShengobj)
-                let changShengmap = new Map(Object.entries(changShengobj))
-                //月系诸星
-                let mstarobj = js.month_star
-                let monthStarmap = new Map(Object.entries(mstarobj))
-                //年支系诸星
-                let yearZhiStarobj = js.year_zhi_star
-                let yearZhiStarmap = new Map(Object.entries(yearZhiStarobj))
-                //年干系诸星
-                let yearGanStarobj = js.year_gan_star
-                let yearGanStarmap = new Map(Object.entries(yearGanStarobj))
-                //console.log("yearGanStarMap: ",yearGanStarmap)
-                //时系诸星
-                let hourStarobj = js.hour_star
-                let hourStarmap = new Map(Object.entries(hourStarobj))
-                //四化
-                let shobj = js.si_hua
-                let siHuamap = new Map(Object.entries(shobj))
-                //大限
-                let daXianobj = js.da_xian
-                let daXianmap = new Map(Object.entries(daXianobj))
-                //小限
-                let xiaoXianobj = js.xiao_xian
-                let xiaoXianmap = new Map(Object.entries(xiaoXianobj))
-                //其他星
-                let otherStarobj = js.other_star
-                let otherStarmap = new Map(Object.entries(otherStarobj))
-                //庙
-                let miaoobj = js.miao
-                let miaomap = new Map(Object.entries(miaoobj))
+                    //#################################################
+                    let solarp = document.getElementById("solar") //阳历
+                    solarp.innerHTML = ""
+                    solarp.innerHTML = solar + "<br>" + gzs + "<br>" + moon;
+                    //################################################
+                    let msgp = document.getElementById("msg")//命主　身主　
+                    msgp.innerHTML = ""
+                    msgp.innerHTML = "命宫:" + minggong + " " + "命主:" + mingzhu + "<br>" +
+                        "身宫:" + shengong + " " + "身主:" + shenzhu + "<br>" + js.wu_xing;
+                    //################################################
+                    let x2p = document.getElementById("x2")
+                    x2p.innerHTML = ""
+                    //################################################
+                    let haip = document.getElementById("hai")
+                    let hail = document.getElementById("hail")
+                    let hail2 = document.getElementById("hail2")
+                    let hail3 = document.getElementById("hail3")
+                    let zip = document.getElementById("zi")
+                    let zil = document.getElementById("zil")
+                    let zil2 = document.getElementById("zil2")
+                    let zil3 = document.getElementById("zil3")
+                    let choup = document.getElementById("chou")
+                    let choul = document.getElementById("choul")
+                    let choul2 = document.getElementById("choul2")
+                    let choul3 = document.getElementById("choul3")
+                    let yinp = document.getElementById("yin")
+                    let yinl = document.getElementById("yinl")
+                    let yinl2 = document.getElementById("yinl2")
+                    let yinl3 = document.getElementById("yinl3")
+                    let maop = document.getElementById("mao")
+                    let maol = document.getElementById("maol")
+                    let maol2 = document.getElementById("maol2")
+                    let maol3 = document.getElementById("maol3")
+                    let chenp = document.getElementById("chen")
+                    let chenl = document.getElementById("chenl")
+                    let chenl2 = document.getElementById("chenl2")
+                    let chenl3 = document.getElementById("chenl3")
+                    let sip = document.getElementById("si")
+                    let sil = document.getElementById("sil")
+                    let sil2 = document.getElementById("sil2")
+                    let sil3 = document.getElementById("sil3")
+                    let wup = document.getElementById("wu")
+                    let wul = document.getElementById("wul")
+                    let wul2 = document.getElementById("wul2")
+                    let wul3 = document.getElementById("wul3")
+                    let weip = document.getElementById("wei")
+                    let weil = document.getElementById("weil")
+                    let weil2 = document.getElementById("weil2")
+                    let weil3 = document.getElementById("weil3")
+                    let shenp = document.getElementById("shen")
+                    let shenl = document.getElementById("shenl")
+                    let shenl2 = document.getElementById("shenl2")
+                    let shenl3 = document.getElementById("shenl3")
+                    let youp = document.getElementById("you")
+                    let youl = document.getElementById("youl")
+                    let youl2 = document.getElementById("youl2")
+                    let youl3 = document.getElementById("youl3")
+                    let xup = document.getElementById("xu")
+                    let xul = document.getElementById("xul")
+                    let xul2 = document.getElementById("xul2")
+                    let xul3 = document.getElementById("xul3")
+                    //
+                    let hail4 = document.getElementById("hail4")
+                    let zil4 = document.getElementById("zil4")
+                    let choul4 = document.getElementById("choul4")
+                    let yinl4 = document.getElementById("yinl4")
+                    let maol4 = document.getElementById("maol4")
+                    let chenl4 = document.getElementById("chenl4")
+                    let sil4 = document.getElementById("sil4")
+                    let wul4 = document.getElementById("wul4")
+                    let weil4 = document.getElementById("weil4")
+                    let shenl4 = document.getElementById("shenl4")
+                    let youl4 = document.getElementById("youl4")
+                    let xul4 = document.getElementById("xul4")
+                    hail4.innerHTML = ""
+                    zil4.innerHTML = ""
+                    choul4.innerHTML = ""
+                    yinl4.innerHTML = ""
+                    maol4.innerHTML = ""
+                    chenl4.innerHTML = ""
+                    sil4.innerHTML = ""
+                    wul4.innerHTML = ""
+                    weil4.innerHTML = ""
+                    shenl4.innerHTML = ""
+                    youl4.innerHTML = ""
+                    xul4.innerHTML = ""
+                    //
+                    let hail5 = document.getElementById("hail5")
+                    let zil5 = document.getElementById("zil5")
+                    let choul5 = document.getElementById("choul5")
+                    let yinl5 = document.getElementById("yinl5")
+                    let maol5 = document.getElementById("maol5")
+                    let chenl5 = document.getElementById("chenl5")
+                    let sil5 = document.getElementById("sil5")
+                    let wul5 = document.getElementById("wul5")
+                    let weil5 = document.getElementById("weil5")
+                    let shenl5 = document.getElementById("shenl5")
+                    let youl5 = document.getElementById("youl5")
+                    let xul5 = document.getElementById("xul5")
+                    hail5.innerHTML = ""
+                    zil5.innerHTML = ""
+                    choul5.innerHTML = ""
+                    yinl5.innerHTML = ""
+                    maol5.innerHTML = ""
+                    chenl5.innerHTML = ""
+                    sil5.innerHTML = ""
+                    wul5.innerHTML = ""
+                    weil5.innerHTML = ""
+                    shenl5.innerHTML = ""
+                    youl5.innerHTML = ""
+                    xul5.innerHTML = ""
+                    //
+                    let hail6 = document.getElementById("hail6")
+                    let zil6 = document.getElementById("zil6")
+                    let choul6 = document.getElementById("choul6")
+                    let yinl6 = document.getElementById("yinl6")
+                    let maol6 = document.getElementById("maol6")
+                    let chenl6 = document.getElementById("chenl6")
+                    let sil6 = document.getElementById("sil6")
+                    let wul6 = document.getElementById("wul6")
+                    let weil6 = document.getElementById("weil6")
+                    let shenl6 = document.getElementById("shenl6")
+                    let youl6 = document.getElementById("youl6")
+                    let xul6 = document.getElementById("xul6")
+                    hail6.innerHTML = ""
+                    zil6.innerHTML = ""
+                    choul6.innerHTML = ""
+                    yinl6.innerHTML = ""
+                    maol6.innerHTML = ""
+                    chenl6.innerHTML = ""
+                    sil6.innerHTML = ""
+                    wul6.innerHTML = ""
+                    weil6.innerHTML = ""
+                    shenl6.innerHTML = ""
+                    youl6.innerHTML = ""
+                    xul6.innerHTML = ""
+                    //
+                    let hail7 = document.getElementById("hail7")
+                    let zil7 = document.getElementById("zil7")
+                    let choul7 = document.getElementById("choul7")
+                    let yinl7 = document.getElementById("yinl7")
+                    let maol7 = document.getElementById("maol7")
+                    let chenl7 = document.getElementById("chenl7")
+                    let sil7 = document.getElementById("sil7")
+                    let wul7 = document.getElementById("wul7")
+                    let weil7 = document.getElementById("weil7")
+                    let shenl7 = document.getElementById("shenl7")
+                    let youl7 = document.getElementById("youl7")
+                    let xul7 = document.getElementById("xul7")
+                    hail7.innerHTML = ""
+                    zil7.innerHTML = ""
+                    choul7.innerHTML = ""
+                    yinl7.innerHTML = ""
+                    maol7.innerHTML = ""
+                    chenl7.innerHTML = ""
+                    sil7.innerHTML = ""
+                    wul7.innerHTML = ""
+                    weil7.innerHTML = ""
+                    shenl7.innerHTML = ""
+                    youl7.innerHTML = ""
+                    xul7.innerHTML = ""
+                    //
+                    let hail8 = document.getElementById("hail8")
+                    let zil8 = document.getElementById("zil8")
+                    let choul8 = document.getElementById("choul8")
+                    let yinl8 = document.getElementById("yinl8")
+                    let maol8 = document.getElementById("maol8")
+                    let chenl8 = document.getElementById("chenl8")
+                    let sil8 = document.getElementById("sil8")
+                    let wul8 = document.getElementById("wul8")
+                    let weil8 = document.getElementById("weil8")
+                    let shenl8 = document.getElementById("shenl8")
+                    let youl8 = document.getElementById("youl8")
+                    let xul8 = document.getElementById("xul8")
+                    hail8.innerHTML = ""
+                    zil8.innerHTML = ""
+                    choul8.innerHTML = ""
+                    yinl8.innerHTML = ""
+                    maol8.innerHTML = ""
+                    chenl8.innerHTML = ""
+                    sil8.innerHTML = ""
+                    wul8.innerHTML = ""
+                    weil8.innerHTML = ""
+                    shenl8.innerHTML = ""
+                    youl8.innerHTML = ""
+                    xul8.innerHTML = ""
+                    //
+                    haip.innerHTML = ""
+                    hail.innerHTML = ""
+                    hail2.innerHTML = ""
+                    hail3.innerHTML = ""
+                    zip.innerHTML = ""
+                    zil.innerHTML = ""
+                    zil2.innerHTML = ""
+                    zil3.innerHTML = ""
+                    choup.innerHTML = ""
+                    choul.innerHTML = ""
+                    choul2.innerHTML = ""
+                    choul3.innerHTML = ""
+                    yinp.innerHTML = ""
+                    yinl.innerHTML = ""
+                    yinl2.innerHTML = ""
+                    yinl3.innerHTML = ""
+                    maop.innerHTML = ""
+                    maol.innerHTML = ""
+                    maol2.innerHTML = ""
+                    maol3.innerHTML = ""
+                    chenp.innerHTML = ""
+                    chenl.innerHTML = ""
+                    chenl2.innerHTML = ""
+                    chenl3.innerHTML = ""
+                    sip.innerHTML = ""
+                    sil.innerHTML = ""
+                    sil2.innerHTML = ""
+                    sil3.innerHTML = ""
+                    wup.innerHTML = ""
+                    wul.innerHTML = ""
+                    wul2.innerHTML = ""
+                    wul3.innerHTML = ""
+                    weip.innerHTML = ""
+                    weil.innerHTML = ""
+                    weil2.innerHTML = ""
+                    weil3.innerHTML = ""
+                    shenp.innerHTML = ""
+                    shenl.innerHTML = ""
+                    shenl2.innerHTML = ""
+                    shenl3.innerHTML = ""
+                    youp.innerHTML = ""
+                    youl.innerHTML = ""
+                    youl2.innerHTML = ""
+                    youl3.innerHTML = ""
+                    xup.innerHTML = ""
+                    xul.innerHTML = ""
+                    xul2.innerHTML = ""
+                    xul3.innerHTML = ""
+                    //###########################################
+                    let mgzArr = [haip, zip, choup, yinp, maop, chenp, sip, wup, weip, shenp, youp, xup]//月干支数组
+                    let mparr = [hail, zil, choul, yinl, maol, chenl, sil, wul, weil, shenl, youl, xul]//命盘十二宫
+                    let stararr = [hail2, zil2, choul2, yinl2, maol2, chenl2, sil2, wul2, weil2, shenl2, youl2, xul2]//十四主星
+                    let monthsarr = [hail3, zil3, choul3, yinl3, maol3, chenl3, sil3, wul3, weil3, shenl3, youl3, xul3]//月系诸星
+                    let yearZhiArr = [hail4, zil4, choul4, yinl4, maol4, chenl4, sil4, wul4, weil4, shenl4, youl4, xul4]//年支系诸星
+                    let yearGanArr = [hail5, zil5, choul5, yinl5, maol5, chenl5, sil5, wul5, weil5, shenl5, youl5, xul5]//年干系诸星
+                    let hourArr = [hail6, zil6, choul6, yinl6, maol6, chenl6, sil6, wul6, weil6, shenl6, youl6, xul6]//时系诸星
+                    let daXiaoXianArr = [hail7, zil7, choul7, yinl7, maol7, chenl7, sil7, wul7, weil7, shenl7, youl7, xul7]//大小限
+                    let otherArr = [hail8, zil8, choul8, yinl8, maol8, chenl8, sil8, wul8, weil8, shenl8, youl8, xul8]//其他星
 
-                //#################################################
-                let solarp = document.getElementById("solar") //阳历
-                solarp.innerHTML = ""
-                solarp.innerHTML = solar + "<br>" + gzs + "<br>" + moon /*+ "<br>" +
-                    "<br>" + huaLu + "<br>" + huaQuan + "<br>" + huaKe + "<br>" + huaJi*/
-                //-------------------------------------------------------
-                let msgp = document.getElementById("msg")//命主　身主　
-                msgp.innerHTML = ""
-                msgp.innerHTML = "命宫:" + minggong + " " + "命主:" + mingzhu + "<br>" +
-                    "身宫:" + shengong + " " + "身主:" + shenzhu + "<br>" +
-                    js.wu_xing //+ "<br>" + guiRenYang + "<br>" + guiRenYin;
-                //#################################################
-                // let xinfop = document.getElementById("xinfo")
-                // xinfop.innerHTML = ""
-                // xinfop.innerHTML = "日禽: " + riQin + "<br>" + "時禽: " + shiQin + "<br>" + riJianChu +
-                //     "<br>" + yueXiang + "<br>" + jieQi + "<br>" + yueJiang + "<br>"
-                //################################################
-                let x2p =document.getElementById("x2")
-                x2p.innerHTML=""
-               // x2p.innerHTML=js.si_hua_y+"<br>"+"<br>"+js.si_hua_m+"<br>"+"<br>"+js.si_hua_d
-                //################################################
-                let haip = document.getElementById("hai")
-                let hail = document.getElementById("hail")
-                let hail2 = document.getElementById("hail2")
-                let hail3 = document.getElementById("hail3")
-                let zip = document.getElementById("zi")
-                let zil = document.getElementById("zil")
-                let zil2 = document.getElementById("zil2")
-                let zil3 = document.getElementById("zil3")
-                let choup = document.getElementById("chou")
-                let choul = document.getElementById("choul")
-                let choul2 = document.getElementById("choul2")
-                let choul3 = document.getElementById("choul3")
-                let yinp = document.getElementById("yin")
-                let yinl = document.getElementById("yinl")
-                let yinl2 = document.getElementById("yinl2")
-                let yinl3 = document.getElementById("yinl3")
-                let maop = document.getElementById("mao")
-                let maol = document.getElementById("maol")
-                let maol2 = document.getElementById("maol2")
-                let maol3 = document.getElementById("maol3")
-                let chenp = document.getElementById("chen")
-                let chenl = document.getElementById("chenl")
-                let chenl2 = document.getElementById("chenl2")
-                let chenl3 = document.getElementById("chenl3")
-                let sip = document.getElementById("si")
-                let sil = document.getElementById("sil")
-                let sil2 = document.getElementById("sil2")
-                let sil3 = document.getElementById("sil3")
-                let wup = document.getElementById("wu")
-                let wul = document.getElementById("wul")
-                let wul2 = document.getElementById("wul2")
-                let wul3 = document.getElementById("wul3")
-                let weip = document.getElementById("wei")
-                let weil = document.getElementById("weil")
-                let weil2 = document.getElementById("weil2")
-                let weil3 = document.getElementById("weil3")
-                let shenp = document.getElementById("shen")
-                let shenl = document.getElementById("shenl")
-                let shenl2 = document.getElementById("shenl2")
-                let shenl3 = document.getElementById("shenl3")
-                let youp = document.getElementById("you")
-                let youl = document.getElementById("youl")
-                let youl2 = document.getElementById("youl2")
-                let youl3 = document.getElementById("youl3")
-                let xup = document.getElementById("xu")
-                let xul = document.getElementById("xul")
-                let xul2 = document.getElementById("xul2")
-                let xul3 = document.getElementById("xul3")
-                //
-                let hail4 = document.getElementById("hail4")
-                let zil4 = document.getElementById("zil4")
-                let choul4 = document.getElementById("choul4")
-                let yinl4 = document.getElementById("yinl4")
-                let maol4 = document.getElementById("maol4")
-                let chenl4 = document.getElementById("chenl4")
-                let sil4 = document.getElementById("sil4")
-                let wul4 = document.getElementById("wul4")
-                let weil4 = document.getElementById("weil4")
-                let shenl4 = document.getElementById("shenl4")
-                let youl4 = document.getElementById("youl4")
-                let xul4 = document.getElementById("xul4")
-                hail4.innerHTML = ""
-                zil4.innerHTML = ""
-                choul4.innerHTML = ""
-                yinl4.innerHTML = ""
-                maol4.innerHTML = ""
-                chenl4.innerHTML = ""
-                sil4.innerHTML = ""
-                wul4.innerHTML = ""
-                weil4.innerHTML = ""
-                shenl4.innerHTML = ""
-                youl4.innerHTML = ""
-                xul4.innerHTML = ""
-                //
-                let hail5 = document.getElementById("hail5")
-                let zil5 = document.getElementById("zil5")
-                let choul5 = document.getElementById("choul5")
-                let yinl5 = document.getElementById("yinl5")
-                let maol5 = document.getElementById("maol5")
-                let chenl5 = document.getElementById("chenl5")
-                let sil5 = document.getElementById("sil5")
-                let wul5 = document.getElementById("wul5")
-                let weil5 = document.getElementById("weil5")
-                let shenl5 = document.getElementById("shenl5")
-                let youl5 = document.getElementById("youl5")
-                let xul5 = document.getElementById("xul5")
-                hail5.innerHTML = ""
-                zil5.innerHTML = ""
-                choul5.innerHTML = ""
-                yinl5.innerHTML = ""
-                maol5.innerHTML = ""
-                chenl5.innerHTML = ""
-                sil5.innerHTML = ""
-                wul5.innerHTML = ""
-                weil5.innerHTML = ""
-                shenl5.innerHTML = ""
-                youl5.innerHTML = ""
-                xul5.innerHTML = ""
-                //
-                let hail6 = document.getElementById("hail6")
-                let zil6 = document.getElementById("zil6")
-                let choul6 = document.getElementById("choul6")
-                let yinl6 = document.getElementById("yinl6")
-                let maol6 = document.getElementById("maol6")
-                let chenl6 = document.getElementById("chenl6")
-                let sil6 = document.getElementById("sil6")
-                let wul6 = document.getElementById("wul6")
-                let weil6 = document.getElementById("weil6")
-                let shenl6 = document.getElementById("shenl6")
-                let youl6 = document.getElementById("youl6")
-                let xul6 = document.getElementById("xul6")
-                hail6.innerHTML = ""
-                zil6.innerHTML = ""
-                choul6.innerHTML = ""
-                yinl6.innerHTML = ""
-                maol6.innerHTML = ""
-                chenl6.innerHTML = ""
-                sil6.innerHTML = ""
-                wul6.innerHTML = ""
-                weil6.innerHTML = ""
-                shenl6.innerHTML = ""
-                youl6.innerHTML = ""
-                xul6.innerHTML = ""
-                //
-                let hail7 = document.getElementById("hail7")
-                let zil7 = document.getElementById("zil7")
-                let choul7 = document.getElementById("choul7")
-                let yinl7 = document.getElementById("yinl7")
-                let maol7 = document.getElementById("maol7")
-                let chenl7 = document.getElementById("chenl7")
-                let sil7 = document.getElementById("sil7")
-                let wul7 = document.getElementById("wul7")
-                let weil7 = document.getElementById("weil7")
-                let shenl7 = document.getElementById("shenl7")
-                let youl7 = document.getElementById("youl7")
-                let xul7 = document.getElementById("xul7")
-                hail7.innerHTML = ""
-                zil7.innerHTML = ""
-                choul7.innerHTML = ""
-                yinl7.innerHTML = ""
-                maol7.innerHTML = ""
-                chenl7.innerHTML = ""
-                sil7.innerHTML = ""
-                wul7.innerHTML = ""
-                weil7.innerHTML = ""
-                shenl7.innerHTML = ""
-                youl7.innerHTML = ""
-                xul7.innerHTML = ""
-                //
-                let hail8 = document.getElementById("hail8")
-                let zil8 = document.getElementById("zil8")
-                let choul8 = document.getElementById("choul8")
-                let yinl8 = document.getElementById("yinl8")
-                let maol8 = document.getElementById("maol8")
-                let chenl8 = document.getElementById("chenl8")
-                let sil8 = document.getElementById("sil8")
-                let wul8 = document.getElementById("wul8")
-                let weil8 = document.getElementById("weil8")
-                let shenl8 = document.getElementById("shenl8")
-                let youl8 = document.getElementById("youl8")
-                let xul8 = document.getElementById("xul8")
-                hail8.innerHTML = ""
-                zil8.innerHTML = ""
-                choul8.innerHTML = ""
-                yinl8.innerHTML = ""
-                maol8.innerHTML = ""
-                chenl8.innerHTML = ""
-                sil8.innerHTML = ""
-                wul8.innerHTML = ""
-                weil8.innerHTML = ""
-                shenl8.innerHTML = ""
-                youl8.innerHTML = ""
-                xul8.innerHTML = ""
-                //
-                haip.innerHTML = ""
-                hail.innerHTML = ""
-                hail2.innerHTML = ""
-                hail3.innerHTML = ""
-                zip.innerHTML = ""
-                zil.innerHTML = ""
-                zil2.innerHTML = ""
-                zil3.innerHTML = ""
-                choup.innerHTML = ""
-                choul.innerHTML = ""
-                choul2.innerHTML = ""
-                choul3.innerHTML = ""
-                yinp.innerHTML = ""
-                yinl.innerHTML = ""
-                yinl2.innerHTML = ""
-                yinl3.innerHTML = ""
-                maop.innerHTML = ""
-                maol.innerHTML = ""
-                maol2.innerHTML = ""
-                maol3.innerHTML = ""
-                chenp.innerHTML = ""
-                chenl.innerHTML = ""
-                chenl2.innerHTML = ""
-                chenl3.innerHTML = ""
-                sip.innerHTML = ""
-                sil.innerHTML = ""
-                sil2.innerHTML = ""
-                sil3.innerHTML = ""
-                wup.innerHTML = ""
-                wul.innerHTML = ""
-                wul2.innerHTML = ""
-                wul3.innerHTML = ""
-                weip.innerHTML = ""
-                weil.innerHTML = ""
-                weil2.innerHTML = ""
-                weil3.innerHTML = ""
-                shenp.innerHTML = ""
-                shenl.innerHTML = ""
-                shenl2.innerHTML = ""
-                shenl3.innerHTML = ""
-                youp.innerHTML = ""
-                youl.innerHTML = ""
-                youl2.innerHTML = ""
-                youl3.innerHTML = ""
-                xup.innerHTML = ""
-                xul.innerHTML = ""
-                xul2.innerHTML = ""
-                xul3.innerHTML = ""
-                //###########################################
-                let mgzArr = [haip, zip, choup, yinp, maop, chenp, sip, wup, weip, shenp, youp, xup]//月干支数组
-                let mparr = [hail, zil, choul, yinl, maol, chenl, sil, wul, weil, shenl, youl, xul]//命盘十二宫
-                let stararr = [hail2, zil2, choul2, yinl2, maol2, chenl2, sil2, wul2, weil2, shenl2, youl2, xul2]//十四主星
-                let monthsarr = [hail3, zil3, choul3, yinl3, maol3, chenl3, sil3, wul3, weil3, shenl3, youl3, xul3]//月系诸星
-                let yearZhiArr = [hail4, zil4, choul4, yinl4, maol4, chenl4, sil4, wul4, weil4, shenl4, youl4, xul4]//年支系诸星
-                let yearGanArr = [hail5, zil5, choul5, yinl5, maol5, chenl5, sil5, wul5, weil5, shenl5, youl5, xul5]//年干系诸星
-                let hourArr = [hail6, zil6, choul6, yinl6, maol6, chenl6, sil6, wul6, weil6, shenl6, youl6, xul6]//时系诸星
-                let daXiaoXianArr = [hail7, zil7, choul7, yinl7, maol7, chenl7, sil7, wul7, weil7, shenl7, youl7, xul7]//大小限
-                let otherArr = [hail8, zil8, choul8, yinl8, maol8, chenl8, sil8, wul8, weil8, shenl8, youl8, xul8]//其他星
-
-                addmgz(mgz, mgzArr)//月干支
-                addChangSheng12(changShengmap, mgzArr)
-                addMingPan(mingpan, mparr)//命宫
-                addStar14(starmap, miaomap, stararr)//14主星
-                addMonthStar(monthStarmap, monthsarr)//月系主星
-                addYearZhiStar(yearZhiStarmap, yearZhiArr)//年支系诸星
-                addYearGanStar(yearGanStarmap, yearGanArr, miaomap)//年干系诸星
-                addHourStar(hourStarmap, hourArr, miaomap)//时系诸星
-                addSiHua(siHuamap, stararr)//四化
-                addDaXian(daXianmap, daXiaoXianArr)//大限
-                addXiaoXian(xiaoXianmap, daXiaoXianArr)//小限
-                addOtherStar(otherStarmap, otherArr, miaomap)//其他星系
-                //miaox(miaomap, miaop)//庙显示到指定位置
-                //==========================================
-                shcolor(stararr)//14主星 红色
-                ygcolor(yearGanArr)//年干诸星 蓝色
-                yzcolor(yearZhiArr)//年支诸星　深天蓝
-                mscolor(monthsarr)//月系诸星　绿色
-                hscolor(hourArr)//时系诸星 兰花的紫色
-                oclolr(otherArr)//其他星　橙红色
-                //////////////////////////////////////////////////
-                infoPage(js)
-            },
-            error: function () {
-                alert("error");
-            }
-        });
-        return false;
-    }
-
-    //####################################################
-    function infoPage(js) {
-        let rinfop = document.getElementById("rightp")
-        rinfop.innerHTML = ""
-        //rinfop.innerHTML=/*js.si_hua_y+"<br>"+js.si_hua_m+"<br>"+js.si_hua_d*/
-    }
-
-    //######################################################
-    //排月干支(寅首)
-    function addmgz(mgz, mgzArr) {
-        for (i = 0; i < mgz.length; i++) {
-            mgzArr[i].innerHTML = mgz[i]
+                    addmgz(mgz, mgzArr)//月干支
+                    addChangSheng12(changShengmap, mgzArr)
+                    addMingPan(mingpan, mparr)//命宫
+                    addStar14(starmap, miaomap, stararr)//14主星
+                    addMonthStar(monthStarmap, monthsarr)//月系主星
+                    addYearZhiStar(yearZhiStarmap, yearZhiArr)//年支系诸星
+                    addYearGanStar(yearGanStarmap, yearGanArr, miaomap)//年干系诸星
+                    addHourStar(hourStarmap, hourArr, miaomap)//时系诸星
+                    addSiHua(siHuamap, stararr)//四化
+                    addDaXian(daXianmap, daXiaoXianArr)//大限
+                    addXiaoXian(xiaoXianmap, daXiaoXianArr)//小限
+                    addOtherStar(otherStarmap, otherArr, miaomap)//其他星系
+                    //miaox(miaomap, miaop)//庙显示到指定位置
+                    //==========================================
+                    shcolor(stararr)//14主星 红色
+                    ygcolor(yearGanArr)//年干诸星 蓝色
+                    yzcolor(yearZhiArr)//年支诸星　深天蓝
+                    mscolor(monthsarr)//月系诸星　绿色
+                    hscolor(hourArr)//时系诸星 兰花的紫色
+                    oclolr(otherArr)//其他星　橙红色
+                    //////////////////////////////////////////////////
+                    infoPage(js)
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+            return false;
         }
-    }
 
-    //十二长生
-    function addChangSheng12(changShengmap, mgzArr) {
-        for (let [csz, csn] of changShengmap.entries()) {
-            if (csz === "亥") {
-                mgzArr[0].innerHTML += " " + csn
-            }
-            if (csz === "子") {
-                mgzArr[1].innerHTML += " " + csn
-            }
-            if (csz === "丑") {
-                mgzArr[2].innerHTML += " " + csn
-            }
-            if (csz === "寅") {
-                mgzArr[3].innerHTML += " " + csn
-            }
-            if (csz === "卯") {
-                mgzArr[4].innerHTML += " " + csn
-            }
-            if (csz === "辰") {
-                mgzArr[5].innerHTML += " " + csn
-            }
-            if (csz === "巳") {
-                mgzArr[6].innerHTML += " " + csn
-            }
-            if (csz === "午") {
-                mgzArr[7].innerHTML += " " + csn
-            }
-            if (csz === "未") {
-                mgzArr[8].innerHTML += " " + csn
-            }
-            if (csz === "申") {
-                mgzArr[9].innerHTML += " " + csn
-            }
-            if (csz === "酉") {
-                mgzArr[10].innerHTML += " " + csn
-            }
-            if (csz === "戌") {
-                mgzArr[11].innerHTML += " " + csn
+        //####################################################
+        function infoPage(js) {
+            let rinfop = document.getElementById("rightp")
+            rinfop.innerHTML = ""
+        }
+
+        //######################################################
+        //排月干支(寅首)
+        function addmgz(mgz, mgzArr) {
+            for (i = 0; i < mgz.length; i++) {
+                mgzArr[i].innerHTML = mgz[i]
             }
         }
-    }
 
-    //命宫　身宫...十二宫
-    function addMingPan(mingpan, mparr) {
-        for (let [key, value] of mingpan.entries()) {
-            // console.log(key + "==" + value)
-            switch (key) {
+        //十二长生
+        function addChangSheng12(changShengmap, mgzArr) {
+            for (let [csz, csn] of changShengmap.entries()) {
+                if (csz === "亥") {
+                    mgzArr[0].innerHTML += " " + csn
+                }
+                if (csz === "子") {
+                    mgzArr[1].innerHTML += " " + csn
+                }
+                if (csz === "丑") {
+                    mgzArr[2].innerHTML += " " + csn
+                }
+                if (csz === "寅") {
+                    mgzArr[3].innerHTML += " " + csn
+                }
+                if (csz === "卯") {
+                    mgzArr[4].innerHTML += " " + csn
+                }
+                if (csz === "辰") {
+                    mgzArr[5].innerHTML += " " + csn
+                }
+                if (csz === "巳") {
+                    mgzArr[6].innerHTML += " " + csn
+                }
+                if (csz === "午") {
+                    mgzArr[7].innerHTML += " " + csn
+                }
+                if (csz === "未") {
+                    mgzArr[8].innerHTML += " " + csn
+                }
+                if (csz === "申") {
+                    mgzArr[9].innerHTML += " " + csn
+                }
+                if (csz === "酉") {
+                    mgzArr[10].innerHTML += " " + csn
+                }
+                if (csz === "戌") {
+                    mgzArr[11].innerHTML += " " + csn
+                }
+            }
+        }
+
+        //命宫　身宫...十二宫
+        function addMingPan(mingpan, mparr) {
+            for (let [key, value] of mingpan.entries()) {
+                switch (key) {
+                    case "亥":
+                        mparr[0].innerHTML = value
+                        break
+                    case "子":
+                        mparr[1].innerHTML = value
+                        break
+                    case "丑":
+                        mparr[2].innerHTML = value
+                        break
+                    case "寅":
+                        mparr[3].innerHTML = value
+                        break
+                    case "卯":
+                        mparr[4].innerHTML = value
+                        break
+                    case "辰":
+                        mparr[5].innerHTML = value
+                        break
+                    case "巳":
+                        mparr[6].innerHTML = value
+                        break
+                    case "午":
+                        mparr[7].innerHTML = value
+                        break
+                    case "未":
+                        mparr[8].innerHTML = value
+                        break
+                    case "申":
+                        mparr[9].innerHTML = value
+                        break
+                    case "酉":
+                        mparr[10].innerHTML = value
+                        break
+                    case "戌":
+                        mparr[11].innerHTML = value
+                        break
+                }
+            }
+        }
+
+        //十四主星
+        function addStar14(starmap, miaomap, stararr) {
+            for (let [sn, sz] of starmap.entries()) {
+                if (sz === "亥") {
+                    stararr[0].innerHTML += " " + sn
+                    addMiao(sz, sn, 0, miaomap, stararr)
+                }
+                if (sz === "子") {
+                    stararr[1].innerHTML += " " + sn
+                    addMiao(sz, sn, 1, miaomap, stararr)//zs:地支宫位　sn:地支星名　1:lable数组的id数字　miaomap:庙map stararr:label数组
+                }
+                if (sz === "丑") {
+                    stararr[2].innerHTML += " " + sn
+                    addMiao(sz, sn, 2, miaomap, stararr)
+                }
+                if (sz === "寅") {
+                    stararr[3].innerHTML += " " + sn
+                    addMiao(sz, sn, 3, miaomap, stararr)
+                }
+                if (sz === "卯") {
+                    stararr[4].innerHTML += " " + sn
+                    addMiao(sz, sn, 4, miaomap, stararr)
+                }
+                if (sz === "辰") {
+                    stararr[5].innerHTML += " " + sn
+                    addMiao(sz, sn, 5, miaomap, stararr)
+                }
+                if (sz === "巳") {
+                    stararr[6].innerHTML += " " + sn
+                    addMiao(sz, sn, 6, miaomap, stararr)
+                }
+                if (sz === "午") {
+                    stararr[7].innerHTML += " " + sn
+                    addMiao(sz, sn, 7, miaomap, stararr)
+                }
+                if (sz === "未") {
+                    stararr[8].innerHTML += " " + sn
+                    addMiao(sz, sn, 8, miaomap, stararr)
+                }
+                if (sz === "申") {
+                    stararr[9].innerHTML += " " + sn
+                    addMiao(sz, sn, 9, miaomap, stararr)
+                }
+                if (sz === "酉") {
+                    stararr[10].innerHTML += " " + sn
+                    addMiao(sz, sn, 10, miaomap, stararr)
+                }
+                if (sz === "戌") {
+                    stararr[11].innerHTML += " " + sn
+                    addMiao(sz, sn, 11, miaomap, stararr)
+                }
+            }
+        }
+
+        //月系主星
+        function addMonthStar(monthStarmap, monthsarr) {
+            for (let [msn, msz] of monthStarmap.entries()) {
+                if (msz === "亥") {
+                    monthsarr[0].innerHTML += " " + msn
+                }
+                if (msz === "子") {
+                    monthsarr[1].innerHTML += " " + msn
+                }
+                if (msz === "丑") {
+                    monthsarr[2].innerHTML += " " + msn
+                }
+                if (msz === "寅") {
+                    monthsarr[3].innerHTML += " " + msn
+                }
+                if (msz === "卯") {
+                    monthsarr[4].innerHTML += " " + msn
+                }
+                if (msz === "辰") {
+                    monthsarr[5].innerHTML += " " + msn
+                }
+                if (msz === "巳") {
+                    monthsarr[6].innerHTML += " " + msn
+                }
+                if (msz === "午") {
+                    monthsarr[7].innerHTML += " " + msn
+                }
+                if (msz === "未") {
+                    monthsarr[8].innerHTML += " " + msn
+                }
+                if (msz === "申") {
+                    monthsarr[9].innerHTML += " " + msn
+                }
+                if (msz === "酉") {
+                    monthsarr[10].innerHTML += " " + msn
+                }
+                if (msz === "戌") {
+                    monthsarr[11].innerHTML += " " + msn
+                }
+            }
+        }
+
+        //年支系诸星
+        function addYearZhiStar(yearZhiStarmap, yearZhiArr) {
+            for (let [yzhiStarName, yzhi] of yearZhiStarmap.entries()) {
+                if (yzhi === "亥") {
+                    yearZhiArr[0].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "子") {
+                    yearZhiArr[1].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "丑") {
+                    yearZhiArr[2].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "寅") {
+                    yearZhiArr[3].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "卯") {
+                    yearZhiArr[4].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "辰") {
+                    yearZhiArr[5].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "巳") {
+                    yearZhiArr[6].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "午") {
+                    yearZhiArr[7].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "未") {
+                    yearZhiArr[8].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "申") {
+                    yearZhiArr[9].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "酉") {
+                    yearZhiArr[10].innerHTML += " " + yzhiStarName
+                }
+                if (yzhi === "戌") {
+                    yearZhiArr[11].innerHTML += " " + yzhiStarName
+                }
+            }
+        }
+
+        //年干系诸星
+        function addYearGanStar(yearGanStarmap, yearGanArr, miaomap) {
+            for (let [yganStarName, yzhig] of yearGanStarmap.entries()) {
+                if (yzhig === "亥") {
+                    yearGanArr[0].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 0, miaomap, yearGanArr)
+                }
+                if (yzhig === "子") {
+                    yearGanArr[1].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 1, miaomap, yearGanArr)
+                }
+                if (yzhig === "丑") {
+                    yearGanArr[2].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 2, miaomap, yearGanArr)
+                }
+                if (yzhig === "寅") {
+                    yearGanArr[3].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 3, miaomap, yearGanArr)
+                }
+                if (yzhig === "卯") {
+                    yearGanArr[4].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 4, miaomap, yearGanArr)
+                }
+                if (yzhig === "辰") {
+                    yearGanArr[5].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 5, miaomap, yearGanArr)
+                }
+                if (yzhig === "巳") {
+                    yearGanArr[6].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 6, miaomap, yearGanArr)
+                }
+                if (yzhig === "午") {
+                    yearGanArr[7].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 7, miaomap, yearGanArr)
+                }
+                if (yzhig === "未") {
+                    yearGanArr[8].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 8, miaomap, yearGanArr)
+                }
+                if (yzhig === "申") {
+                    yearGanArr[9].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 9, miaomap, yearGanArr)
+                }
+                if (yzhig === "酉") {
+                    yearGanArr[10].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 10, miaomap, yearGanArr)
+                }
+                if (yzhig === "戌") {
+                    yearGanArr[11].innerHTML += " " + yganStarName
+                    addMiao(yzhig, yganStarName, 11, miaomap, yearGanArr)
+                }
+            }
+        }
+
+        //时系诸星
+        function addHourStar(hourStarmap, hourArr, miaomap) {
+            for (let [hourStarName, hourZhi] of hourStarmap.entries()) {
+                if (hourZhi === "亥") {
+                    hourArr[0].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 0, miaomap, hourArr)
+                }
+                if (hourZhi === "子") {
+                    hourArr[1].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 1, miaomap, hourArr)
+                }
+                if (hourZhi === "丑") {
+                    hourArr[2].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 2, miaomap, hourArr)
+                }
+                if (hourZhi === "寅") {
+                    hourArr[3].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 3, miaomap, hourArr)
+                }
+                if (hourZhi === "卯") {
+                    hourArr[4].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 4, miaomap, hourArr)
+                }
+                if (hourZhi === "辰") {
+                    hourArr[5].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 5, miaomap, hourArr)
+                }
+                if (hourZhi === "巳") {
+                    hourArr[6].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 6, miaomap, hourArr)
+                }
+                if (hourZhi === "午") {
+                    hourArr[7].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 7, miaomap, hourArr)
+                }
+                if (hourZhi === "未") {
+                    hourArr[8].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 8, miaomap, hourArr)
+                }
+                if (hourZhi === "申") {
+                    hourArr[9].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 9, miaomap, hourArr)
+                }
+                if (hourZhi === "酉") {
+                    hourArr[10].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 10, miaomap, hourArr)
+                }
+                if (hourZhi === "戌") {
+                    hourArr[11].innerHTML += " " + hourStarName
+                    addMiao(hourZhi, hourStarName, 11, miaomap, hourArr)
+                }
+            }
+        }
+
+        //四化
+        function addSiHua(siHuamap, stararr) {
+            for (let [siHuaName, shZhi] of siHuamap.entries()) {
+                if (shZhi === "亥") {
+                    stararr[0].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "子") {
+                    stararr[1].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "丑") {
+                    stararr[2].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "寅") {
+                    stararr[3].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "卯") {
+                    stararr[4].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "辰") {
+                    stararr[5].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "巳") {
+                    stararr[6].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "午") {
+                    stararr[7].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "未") {
+                    stararr[8].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "申") {
+                    stararr[9].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "酉") {
+                    stararr[10].innerHTML += "|" + siHuaName
+                }
+                if (shZhi === "戌") {
+                    stararr[11].innerHTML += "|" + siHuaName
+                }
+            }
+        }
+
+        //大限
+        function addDaXian(daXianmap, daXiaoXianArr) {
+            for (let [daZhi, daS] of daXianmap.entries()) {
+                if (daZhi === "亥") {
+                    daXiaoXianArr[0].innerHTML += " " + daS
+                }
+                if (daZhi === "子") {
+                    daXiaoXianArr[1].innerHTML += " " + daS
+                }
+                if (daZhi === "丑") {
+                    daXiaoXianArr[2].innerHTML += " " + daS
+                }
+                if (daZhi === "寅") {
+                    daXiaoXianArr[3].innerHTML += " " + daS
+                }
+                if (daZhi === "卯") {
+                    daXiaoXianArr[4].innerHTML += " " + daS
+                }
+                if (daZhi === "辰") {
+                    daXiaoXianArr[5].innerHTML += " " + daS
+                }
+                if (daZhi === "巳") {
+                    daXiaoXianArr[6].innerHTML += " " + daS
+                }
+                if (daZhi === "午") {
+                    daXiaoXianArr[7].innerHTML += " " + daS
+                }
+                if (daZhi === "未") {
+                    daXiaoXianArr[8].innerHTML += " " + daS
+                }
+                if (daZhi === "申") {
+                    daXiaoXianArr[9].innerHTML += " " + daS
+                }
+                if (daZhi === "酉") {
+                    daXiaoXianArr[10].innerHTML += " " + daS
+                }
+                if (daZhi === "戌") {
+                    daXiaoXianArr[11].innerHTML += " " + daS
+                }
+            }
+        }
+
+        //小限
+        function addXiaoXian(xiaoXianmap, daXiaoXianArr) {
+            for (let [xiaoZhi, xiaoS] of xiaoXianmap.entries()) {
+                if (xiaoZhi === "亥") {
+                    daXiaoXianArr[0].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "子") {
+                    daXiaoXianArr[1].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "丑") {
+                    daXiaoXianArr[2].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "寅") {
+                    daXiaoXianArr[3].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "卯") {
+                    daXiaoXianArr[4].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "辰") {
+                    daXiaoXianArr[5].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "巳") {
+                    daXiaoXianArr[6].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "午") {
+                    daXiaoXianArr[7].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "未") {
+                    daXiaoXianArr[8].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "申") {
+                    daXiaoXianArr[9].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "酉") {
+                    daXiaoXianArr[10].innerHTML += "<br>" + xiaoS
+                }
+                if (xiaoZhi === "戌") {
+                    daXiaoXianArr[11].innerHTML += "<br>" + xiaoS
+                }
+            }
+        }
+
+        //其他星系
+        function addOtherStar(otherStarmap, otherArr, miaomap) {
+            for (let [ostar, ozhi] of otherStarmap.entries()) {
+                if (ozhi === "亥") {
+                    otherArr[0].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 0, miaomap, otherArr)
+                }
+                if (ozhi === "子") {
+                    otherArr[1].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 1, miaomap, otherArr)
+                }
+                if (ozhi === "丑") {
+                    otherArr[2].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 2, miaomap, otherArr)
+                }
+                if (ozhi === "寅") {
+                    otherArr[3].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 3, miaomap, otherArr)
+                }
+                if (ozhi === "卯") {
+                    otherArr[4].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 4, miaomap, otherArr)
+                }
+                if (ozhi === "辰") {
+                    otherArr[5].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 5, miaomap, otherArr)
+                }
+                if (ozhi === "巳") {
+                    otherArr[6].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 6, miaomap, otherArr)
+                }
+                if (ozhi === "午") {
+                    otherArr[7].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 7, miaomap, otherArr)
+                }
+                if (ozhi === "未") {
+                    otherArr[8].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 8, miaomap, otherArr)
+                }
+                if (ozhi === "申") {
+                    otherArr[9].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 9, miaomap, otherArr)
+                }
+                if (ozhi === "酉") {
+                    otherArr[10].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 10, miaomap, otherArr)
+                }
+                if (ozhi === "戌") {
+                    otherArr[11].innerHTML += " " + ostar
+                    addMiao(ozhi, ostar, 11, miaomap, otherArr)
+                }
+            }
+        }
+
+        //庙　
+        //zs:地支宫位　sn:地支星名　1:lable数组的id数字　miaomap:庙map stararr:label数组
+        function addMiao(xzhi, xname, xin, miaomap, stararr) {
+            switch (xzhi) {
                 case "亥":
-                    mparr[0].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "子":
-                    mparr[1].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    //  console.log("天相星?",miaon,"庙?",miaoZhi)
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    //console.log("天梁星?",miaon,"庙?",miaoZhi)
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "丑":
-                    mparr[2].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "寅":
-                    mparr[3].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "卯":
-                    mparr[4].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "辰":
-                    mparr[5].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "巳":
-                    mparr[6].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "午":
-                    mparr[7].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "未":
-                    mparr[8].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "申":
-                    mparr[9].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "酉":
-                    mparr[10].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
                 case "戌":
-                    mparr[11].innerHTML = value
+                    for (let [miaon, miaoZhi] of miaomap.entries()) {
+                        if (miaon === xname) {
+                            switch (miaon) {
+                                case "紫微星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天机星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阳星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "武曲星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天同星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "廉贞星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天府星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "太阴星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "贪狼星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "巨门星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天相星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "天梁星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "七杀星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "破军星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "火星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "铃星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "擎羊星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "陀罗星":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文昌":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                                case "文曲":
+                                    stararr[xin].innerHTML += "(" + miaoZhi + ")"
+                                    break
+                            }
+                        }
+                    }
                     break
             }
         }
-    }
-
-    //十四主星
-    function addStar14(starmap, miaomap, stararr) {
-        for (let [sn, sz] of starmap.entries()) {
-            if (sz === "亥") {
-                stararr[0].innerHTML += " " + sn
-                addMiao(sz, sn, 0, miaomap, stararr)
-            }
-            if (sz === "子") {
-                stararr[1].innerHTML += " " + sn
-                addMiao(sz, sn, 1, miaomap, stararr)//zs:地支宫位　sn:地支星名　1:lable数组的id数字　miaomap:庙map stararr:label数组
-            }
-            if (sz === "丑") {
-                stararr[2].innerHTML += " " + sn
-                addMiao(sz, sn, 2, miaomap, stararr)
-            }
-            if (sz === "寅") {
-                stararr[3].innerHTML += " " + sn
-                addMiao(sz, sn, 3, miaomap, stararr)
-            }
-            if (sz === "卯") {
-                stararr[4].innerHTML += " " + sn
-                addMiao(sz, sn, 4, miaomap, stararr)
-            }
-            if (sz === "辰") {
-                stararr[5].innerHTML += " " + sn
-                addMiao(sz, sn, 5, miaomap, stararr)
-            }
-            if (sz === "巳") {
-                stararr[6].innerHTML += " " + sn
-                addMiao(sz, sn, 6, miaomap, stararr)
-            }
-            if (sz === "午") {
-                stararr[7].innerHTML += " " + sn
-                addMiao(sz, sn, 7, miaomap, stararr)
-            }
-            if (sz === "未") {
-                stararr[8].innerHTML += " " + sn
-                addMiao(sz, sn, 8, miaomap, stararr)
-            }
-            if (sz === "申") {
-                stararr[9].innerHTML += " " + sn
-                addMiao(sz, sn, 9, miaomap, stararr)
-            }
-            if (sz === "酉") {
-                stararr[10].innerHTML += " " + sn
-                addMiao(sz, sn, 10, miaomap, stararr)
-            }
-            if (sz === "戌") {
-                stararr[11].innerHTML += " " + sn
-                addMiao(sz, sn, 11, miaomap, stararr)
+        //=======================================================
+        //14主星颜色
+        function shcolor(stararr) {
+            for (i = 0; i < stararr.length; i++) {
+                stararr[i].style.color = "red"
             }
         }
-    }
 
-    //月系主星
-    function addMonthStar(monthStarmap, monthsarr) {
-        for (let [msn, msz] of monthStarmap.entries()) {
-            if (msz === "亥") {
-                monthsarr[0].innerHTML += " " + msn
-            }
-            if (msz === "子") {
-                monthsarr[1].innerHTML += " " + msn
-            }
-            if (msz === "丑") {
-                monthsarr[2].innerHTML += " " + msn
-            }
-            if (msz === "寅") {
-                monthsarr[3].innerHTML += " " + msn
-            }
-            if (msz === "卯") {
-                monthsarr[4].innerHTML += " " + msn
-            }
-            if (msz === "辰") {
-                monthsarr[5].innerHTML += " " + msn
-            }
-            if (msz === "巳") {
-                monthsarr[6].innerHTML += " " + msn
-            }
-            if (msz === "午") {
-                monthsarr[7].innerHTML += " " + msn
-            }
-            if (msz === "未") {
-                monthsarr[8].innerHTML += " " + msn
-            }
-            if (msz === "申") {
-                monthsarr[9].innerHTML += " " + msn
-            }
-            if (msz === "酉") {
-                monthsarr[10].innerHTML += " " + msn
-            }
-            if (msz === "戌") {
-                monthsarr[11].innerHTML += " " + msn
+        //年干诸星颜色
+        function ygcolor(yearGanArr) {
+            for (i = 0; i < yearGanArr.length; i++) {
+                yearGanArr[i].style.color = "blue"
             }
         }
-    }
 
-    //年支系诸星
-    function addYearZhiStar(yearZhiStarmap, yearZhiArr) {
-        for (let [yzhiStarName, yzhi] of yearZhiStarmap.entries()) {
-            if (yzhi === "亥") {
-                yearZhiArr[0].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "子") {
-                yearZhiArr[1].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "丑") {
-                yearZhiArr[2].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "寅") {
-                yearZhiArr[3].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "卯") {
-                yearZhiArr[4].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "辰") {
-                yearZhiArr[5].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "巳") {
-                yearZhiArr[6].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "午") {
-                yearZhiArr[7].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "未") {
-                yearZhiArr[8].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "申") {
-                yearZhiArr[9].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "酉") {
-                yearZhiArr[10].innerHTML += " " + yzhiStarName
-            }
-            if (yzhi === "戌") {
-                yearZhiArr[11].innerHTML += " " + yzhiStarName
+        //年支诸星颜色
+        function yzcolor(yearZhiArr) {
+            for (i = 0; i < yearZhiArr.length; i++) {
+                yearZhiArr[i].style.color = "DeepSkyBlue"
             }
         }
-    }
 
-    //年干系诸星
-    function addYearGanStar(yearGanStarmap, yearGanArr, miaomap) {
-        for (let [yganStarName, yzhig] of yearGanStarmap.entries()) {
-            if (yzhig === "亥") {
-                yearGanArr[0].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 0, miaomap, yearGanArr)
-            }
-            if (yzhig === "子") {
-                yearGanArr[1].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 1, miaomap, yearGanArr)
-            }
-            if (yzhig === "丑") {
-                yearGanArr[2].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 2, miaomap, yearGanArr)
-            }
-            if (yzhig === "寅") {
-                yearGanArr[3].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 3, miaomap, yearGanArr)
-            }
-            if (yzhig === "卯") {
-                yearGanArr[4].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 4, miaomap, yearGanArr)
-            }
-            if (yzhig === "辰") {
-                yearGanArr[5].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 5, miaomap, yearGanArr)
-            }
-            if (yzhig === "巳") {
-                yearGanArr[6].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 6, miaomap, yearGanArr)
-            }
-            if (yzhig === "午") {
-                yearGanArr[7].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 7, miaomap, yearGanArr)
-            }
-            if (yzhig === "未") {
-                yearGanArr[8].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 8, miaomap, yearGanArr)
-            }
-            if (yzhig === "申") {
-                yearGanArr[9].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 9, miaomap, yearGanArr)
-            }
-            if (yzhig === "酉") {
-                yearGanArr[10].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 10, miaomap, yearGanArr)
-            }
-            if (yzhig === "戌") {
-                yearGanArr[11].innerHTML += " " + yganStarName
-                addMiao(yzhig, yganStarName, 11, miaomap, yearGanArr)
+        //月系诸星
+        function mscolor(monthsarr) {
+            for (i = 0; i < monthsarr.length; i++) {
+                monthsarr[i].style.color = "Green"
             }
         }
-    }
 
-    //时系诸星
-    function addHourStar(hourStarmap, hourArr, miaomap) {
-        //console.log("hourStarmap:",hourStarmap)
-        for (let [hourStarName, hourZhi] of hourStarmap.entries()) {
-            if (hourZhi === "亥") {
-                hourArr[0].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 0, miaomap, hourArr)
-            }
-            if (hourZhi === "子") {
-                hourArr[1].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 1, miaomap, hourArr)
-            }
-            if (hourZhi === "丑") {
-                hourArr[2].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 2, miaomap, hourArr)
-            }
-            if (hourZhi === "寅") {
-                hourArr[3].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 3, miaomap, hourArr)
-            }
-            if (hourZhi === "卯") {
-                hourArr[4].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 4, miaomap, hourArr)
-            }
-            if (hourZhi === "辰") {
-                hourArr[5].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 5, miaomap, hourArr)
-            }
-            if (hourZhi === "巳") {
-                hourArr[6].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 6, miaomap, hourArr)
-            }
-            if (hourZhi === "午") {
-                hourArr[7].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 7, miaomap, hourArr)
-            }
-            if (hourZhi === "未") {
-                hourArr[8].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 8, miaomap, hourArr)
-            }
-            if (hourZhi === "申") {
-                hourArr[9].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 9, miaomap, hourArr)
-            }
-            if (hourZhi === "酉") {
-                hourArr[10].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 10, miaomap, hourArr)
-            }
-            if (hourZhi === "戌") {
-                hourArr[11].innerHTML += " " + hourStarName
-                addMiao(hourZhi, hourStarName, 11, miaomap, hourArr)
+        //时系诸星颜色
+        function hscolor(hourArr) {
+            for (i = 0; i < hourArr.length; i++) {
+                hourArr[i].style.color = "Orchid"
             }
         }
-    }
 
-    //四化
-    function addSiHua(siHuamap, stararr) {
-        for (let [siHuaName, shZhi] of siHuamap.entries()) {
-            if (shZhi === "亥") {
-                stararr[0].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "子") {
-                stararr[1].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "丑") {
-                stararr[2].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "寅") {
-                stararr[3].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "卯") {
-                stararr[4].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "辰") {
-                stararr[5].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "巳") {
-                stararr[6].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "午") {
-                stararr[7].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "未") {
-                stararr[8].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "申") {
-                stararr[9].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "酉") {
-                stararr[10].innerHTML += "|" + siHuaName
-            }
-            if (shZhi === "戌") {
-                stararr[11].innerHTML += "|" + siHuaName
+        //其他星颜色
+        function oclolr(otherArr) {
+            for (i = 0; i < otherArr.length; i++) {
+                otherArr[i].style.color = "OrangeRed"//橙红色
             }
         }
-    }
 
-    //大限
-    function addDaXian(daXianmap, daXiaoXianArr) {
-        for (let [daZhi, daS] of daXianmap.entries()) {
-            if (daZhi === "亥") {
-                daXiaoXianArr[0].innerHTML += " " + daS
-            }
-            if (daZhi === "子") {
-                daXiaoXianArr[1].innerHTML += " " + daS
-            }
-            if (daZhi === "丑") {
-                daXiaoXianArr[2].innerHTML += " " + daS
-            }
-            if (daZhi === "寅") {
-                daXiaoXianArr[3].innerHTML += " " + daS
-            }
-            if (daZhi === "卯") {
-                daXiaoXianArr[4].innerHTML += " " + daS
-            }
-            if (daZhi === "辰") {
-                daXiaoXianArr[5].innerHTML += " " + daS
-            }
-            if (daZhi === "巳") {
-                daXiaoXianArr[6].innerHTML += " " + daS
-            }
-            if (daZhi === "午") {
-                daXiaoXianArr[7].innerHTML += " " + daS
-            }
-            if (daZhi === "未") {
-                daXiaoXianArr[8].innerHTML += " " + daS
-            }
-            if (daZhi === "申") {
-                daXiaoXianArr[9].innerHTML += " " + daS
-            }
-            if (daZhi === "酉") {
-                daXiaoXianArr[10].innerHTML += " " + daS
-            }
-            if (daZhi === "戌") {
-                daXiaoXianArr[11].innerHTML += " " + daS
-            }
+        //------------------------------------
+        function sub() {
         }
-    }
-
-    //小限
-    function addXiaoXian(xiaoXianmap, daXiaoXianArr) {
-        for (let [xiaoZhi, xiaoS] of xiaoXianmap.entries()) {
-            if (xiaoZhi === "亥") {
-                daXiaoXianArr[0].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "子") {
-                daXiaoXianArr[1].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "丑") {
-                daXiaoXianArr[2].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "寅") {
-                daXiaoXianArr[3].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "卯") {
-                daXiaoXianArr[4].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "辰") {
-                daXiaoXianArr[5].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "巳") {
-                daXiaoXianArr[6].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "午") {
-                daXiaoXianArr[7].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "未") {
-                daXiaoXianArr[8].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "申") {
-                daXiaoXianArr[9].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "酉") {
-                daXiaoXianArr[10].innerHTML += "<br>" + xiaoS
-            }
-            if (xiaoZhi === "戌") {
-                daXiaoXianArr[11].innerHTML += "<br>" + xiaoS
-            }
-        }
-    }
-
-    //其他星系
-    function addOtherStar(otherStarmap, otherArr, miaomap) {
-        //console.log("other===>", otherStarmap, otherArr)
-        for (let [ostar, ozhi] of otherStarmap.entries()) {
-            if (ozhi === "亥") {
-                otherArr[0].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 0, miaomap, otherArr)
-            }
-            if (ozhi === "子") {
-                otherArr[1].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 1, miaomap, otherArr)
-            }
-            if (ozhi === "丑") {
-                otherArr[2].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 2, miaomap, otherArr)
-            }
-            if (ozhi === "寅") {
-                otherArr[3].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 3, miaomap, otherArr)
-            }
-            if (ozhi === "卯") {
-                otherArr[4].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 4, miaomap, otherArr)
-            }
-            if (ozhi === "辰") {
-                otherArr[5].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 5, miaomap, otherArr)
-            }
-            if (ozhi === "巳") {
-                otherArr[6].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 6, miaomap, otherArr)
-            }
-            if (ozhi === "午") {
-                otherArr[7].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 7, miaomap, otherArr)
-            }
-            if (ozhi === "未") {
-                otherArr[8].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 8, miaomap, otherArr)
-            }
-            if (ozhi === "申") {
-                otherArr[9].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 9, miaomap, otherArr)
-            }
-            if (ozhi === "酉") {
-                otherArr[10].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 10, miaomap, otherArr)
-            }
-            if (ozhi === "戌") {
-                otherArr[11].innerHTML += " " + ostar
-                addMiao(ozhi, ostar, 11, miaomap, otherArr)
-            }
-        }
-    }
-
-    //庙　
-    //zs:地支宫位　sn:地支星名　1:lable数组的id数字　miaomap:庙map stararr:label数组
-    function addMiao(xzhi, xname, xin, miaomap, stararr) {
-        // console.log("miaomap:",miaomap)
-        switch (xzhi) {
-            case "亥":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "子":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                //  console.log("天相星?",miaon,"庙?",miaoZhi)
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                //console.log("天梁星?",miaon,"庙?",miaoZhi)
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "丑":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "寅":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "卯":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "辰":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "巳":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "午":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "未":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "申":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "酉":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-            case "戌":
-                for (let [miaon, miaoZhi] of miaomap.entries()) {
-                    if (miaon === xname) {
-                        switch (miaon) {
-                            case "紫微星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天机星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阳星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "武曲星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天同星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "廉贞星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天府星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "太阴星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "贪狼星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "巨门星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天相星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "天梁星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "七杀星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "破军星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "火星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "铃星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "擎羊星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "陀罗星":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文昌" :
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                            case "文曲":
-                                stararr[xin].innerHTML += "|" + miaon + "(" + miaoZhi + ")"
-                                break
-                        }
-                    }
-                }
-                break
-        }
-
-    }
-
-    //=======================================================
-    // function miaox(miaomap, miaop) {
-    //     for (let [starm, starz] of miaomap.entries()) {
-    //         miaop.innerHTML += starm + ":" + starz + " "
-    //     }
-    // }
-
-    //=======================================================
-    //14主星颜色
-    function shcolor(stararr) {
-        for (i = 0; i < stararr.length; i++) {
-            stararr[i].style.color = "red"
-        }
-    }
-
-    //年干诸星颜色
-    function ygcolor(yearGanArr) {
-        for (i = 0; i < yearGanArr.length; i++) {
-            yearGanArr[i].style.color = "blue"
-        }
-    }
-
-    //年支诸星颜色
-    function yzcolor(yearZhiArr) {
-        for (i = 0; i < yearZhiArr.length; i++) {
-            yearZhiArr[i].style.color = "DeepSkyBlue"
-        }
-    }
-
-    //月系诸星
-    function mscolor(monthsarr) {
-        for (i = 0; i < monthsarr.length; i++) {
-            monthsarr[i].style.color = "Green"
-        }
-    }
-
-    //时系诸星颜色
-    function hscolor(hourArr) {
-        for (i = 0; i < hourArr.length; i++) {
-            hourArr[i].style.color = "Orchid"
-        }
-    }
-
-    //其他星颜色
-    function oclolr(otherArr) {
-        for (i = 0; i < otherArr.length; i++) {
-            otherArr[i].style.color = "OrangeRed"//橙红色
-        }
-    }
-
-    //------------------------------------
-    function sub() {
-    }
-</script>
+    </script>
 
 </body>
+
 </html>
